@@ -1,0 +1,14 @@
+exclude:
+  - AGENTS.md
+  - README.md
+  - docs
+  - package.json
+  - package-lock.json
+  - node_modules
+  - bang-shell.js
+  - verify-bang-boosters.cjs
+  - verify-bang-four-collision.cjs
+  - verify-bang-saved-backdrop.cjs
+  - verify-bang-menu-focus.cjs
+  - verify-bang-combo-placement.cjs
+  - verify-bang-candy.cjs
