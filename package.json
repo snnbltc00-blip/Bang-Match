@@ -1,0 +1,14 @@
+{
+  "name": "bang-match",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bang Match Oyun Projesi",
+  "scripts": {
+    "test": "node verify-bang-boosters.cjs && node verify-bang-four-collision.cjs && node verify-bang-menu-focus.cjs",
+    "test:backdrop": "node verify-bang-saved-backdrop.cjs",
+    "test:layout": "node verify-bang-combo-placement.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
