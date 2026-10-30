@@ -73,3 +73,5 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 14/39/44/46 seviyelerinde koridor başlangıçta ilerisine kadar dolduruluyordu; önceki doğum-konumu düzeltmesi bu hazır dizilimi kapsamıyordu. Artık ilk top girişte görünür, kalan başlangıç renkleri mevcut sq kuyruğundan normal aralıklarla çıkar. Ayrı üretim sistemi eklenmedi; renk sırası, grup dağılımı, geometri, hareket formülü ve spawnRate=0,5 korunur. Bu dört seviyenin ilk karede görünür top sayısı koridor başına birdir.
 
 320/390 px üzerinde 12 saniyelik gerçek upd+draw akışı, başlangıç renk kuyruğu eşliği ve her doğumun d=0 olması doğrulandı. İlk kare görselleri açık/koyu temada incelendi. Giriş-konumu, üretim/hareket ve grup/gökkuşağı regresyonları geçti.
+
+Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Match/commit/4909576467bc644f6fe24d0e6653d99f8b43a359). Mobil test, yalnız üretim fonksiyonunu değil gerçek güncelleme ve çizim akışını birlikte çalıştırır; başlangıçta koridor ortasında hazır top olmadığını da denetler.
