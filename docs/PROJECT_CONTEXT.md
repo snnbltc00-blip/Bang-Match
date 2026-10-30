@@ -20,7 +20,7 @@
 
 Akış `requestAnimationFrame(loop) → upd(dt) → draw()`. `rs()` CSS boyutu ve cihaz piksel yoğunluğuna göre canvas'ı boyutlandırır. Pointer olayları fare/dokunmayı, wheel ve sürükleme seviye listesini yönetir.
 
-`st` temel ekran akışını taşır: `intro → menu → levels/sp → spwin/lose`. `paused` duraklatma, `activeBoosterInfo` açıklama sırasında güncellemeyi durdurur. `mode=2` aktif oyundur. HTML'de kalan klasik fonksiyonlar/durum dalları kullanıcıya açık ikinci mod anlamına gelmez; ilgisiz görevde temizleme.
+`st` temel ekran akışını taşır: `intro → menu → levels/sp → spwin/lose`. `activeBoosterReward` seviye sonu ödül gösteriminde geçişi bekletir; `earnedBoosterKinds` yalnız geçici gösterim kuyruğudur. `paused` duraklatma, `activeBoosterInfo` açıklama sırasında güncellemeyi durdurur. `mode=2` aktif oyundur. HTML'de kalan klasik fonksiyonlar/durum dalları kullanıcıya açık ikinci mod anlamına gelmez; ilgisiz görevde temizleme.
 
 ## Sembol haritası
 
@@ -65,6 +65,7 @@ Kökte `node DOSYA.cjs` ile ilgili testi çalıştır; önce hedefini ve varsay�
 
 | Test | Amaç / sınır |
 |---|---|
+| [verify-bang-reward-notice.cjs](../verify-bang-reward-notice.cjs) | Tekli/çoklu ödül, çift tıklama, ödülsüz/kayıp/son seviye akışı, yeniden yükleme ve mobil/tema görselleri. |
 | [verify-bang-boosters.cjs](../verify-bang-boosters.cjs) | İlk hediye, modal sırası/durması, ödüller, yeniden yükleme ve kayıt geçişi. |
 | [verify-bang-spawn-rate.cjs](../verify-bang-spawn-rate.cjs) | Beş seviyede çıkış/hareket oranları, 95 seviyede eski üretim karşılaştırması, koridor sayacı ve buz/geri çekilme. |
 | [verify-bang-selected-balance.cjs](../verify-bang-selected-balance.cjs) | Başlangıç/sürekli grup dağılımı, gökkuşağı eşikleri ve grup koruması. |

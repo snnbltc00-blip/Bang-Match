@@ -27,9 +27,11 @@ Gökkuşağına dokunmak komşu grupları patlatır. `rainbowSplash` diğer kori
 | Buz Topu | 5 saniye dondurur; eşleştirme yapılabilir. Tekrar kullanım süre ekler. | Her 5 seviye kazanımında bir. |
 | Şimşek Topu | 10 saniye tekli/ikili grup temizleme yardımı; tekrar kullanım süre ekler. | Her 10 seviye kazanımında bir. |
 
-İlk 1. seviye başlangıcında her birinden bir hak verilir; aynı kayıt için tekrar verilmez. Açıklamalar sırayla kutuda gösterilir, oyun güncellemesi durur. İlk açıklama Anladım, hak yokken simgeye dokunulan açıklama Devam et düğmesi kullanır. Yeni kazanım açıklamaları sonraki oyun başlangıcında sıraya alınır. İlk sürükleme öğreticisi bitmeden özel top kullanımına kısıt vardır.
+İlk 1. seviye başlangıcında her birinden bir hak verilir; aynı kayıt için tekrar verilmez. Açıklamalar sırayla kutuda gösterilir, oyun güncellemesi durur. İlk açıklama Anladım, hak yokken simgeye dokunulan açıklama Devam et düğmesi kullanır. İlk kullanım açıklamaları gerektiğinde sonraki oyun başlangıcında sıraya alınır. İlk sürükleme öğreticisi bitmeden özel top kullanımına kısıt vardır.
 
 Bilgilendirme açıkken sürükleme öğreticisi ve geçici puan/kombo yazıları gizlenir. Öğretici paneli ve oyun toast'ı simgelerin altındadır. Volkanik seçimde belirgin BİR RENK SEÇ paneli ve altında Vazgeç vardır.
+
+Başarılı seviye sonunda envanteri gerçekten artan özel toplar için, 2,8 saniyelik bitiş animasyonundan sonra ortada “🎉 Bir özel top kazandın!” kutucuğu görünür. Mevcut top görseli ve adı kullanılır; kısa büyüme ve hafif parlama animasyonu vardır. Birden fazla ödül sırayla gösterilir. “Devam Et” son kutucukta sonraki seviyeyi (100. seviyede seviye listesini) açar; kutucuk açıkken otomatik geçiş durur. Açılıştaki 0,3 saniyelik giriş koruması seri tıklamanın sonraki kutucuğu atlamasını önler. Bildirim ödül vermez; mevcut ödül sistemi ve envanter artışı kullanılır. Ödülsüz başarı ve kayıp akışı değişmez. Sayfa kapatılır/yenilenirse kazanılmış ödül ve sonraki seviye kaydı korunur; bildirim tekrar oynatılmaz.
 
 ## Seviyeler
 

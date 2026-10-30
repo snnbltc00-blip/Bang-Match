@@ -54,3 +54,10 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - 14/39/44/46/49 için spawnRate=0,5 ve koridor başına üretim sayacı; ilerleme formülü değişmez. Kontrollü 60/120 Hz testinde üretim eski miktarın %49,1–50’si, zincir mesafesi aynı; diğer 95 seviyenin üretimi eski kodla eşleşti.
 - 14/25/37 için 2–3/4/5/6/7 topluk grup oranları %10/%20/%30/%25/%15. Yardım aralıkları %0–60/%60–80/%80–90/%90–100 için 22/16/10/6 saniye; temel skor tetikleyicisi ve gökkuşağı korumaları sürer.
 - Sürekli üretimde koridor başına 10.000, başlangıç üretiminde 2.000 örnek oran testleri geçti. Başlangıç grubunun kuyrukta kalan kısmı sayıldı; kısa yollarda tamamı ilk karede görünmeyebilir. Yardım/grup koruması, üretim/hareket regresyonu ve sabit tohumlu eşleşme testleri geçti. İnsan oynanış testi yapılmadı.
+
+## 2026-10-30 — özel top kazanma bildirimi ve son paket
+
+- Gerçek envanter artışında, bitiş animasyonundan sonra mevcut top görseli ve adıyla kazanma kutucuğu gösterilir. Çoklu ödüller sırayla gösterilir; son Devam Et sonraki seviyeyi açar. Bildirim yeni ödül vermez; kayıt ve kazanım sistemi korunur.
+- Kısa büyüme, hafif parlama, karartma ve seri tıklama koruması eklendi. Ödülsüz/kayıp akışı değişmez. Yenilemede ödül ve sonraki seviye kaydı korunur, kutucuk tekrar oynatılmaz.
+- Ödül bildirimi, özel toplar/kayıt, grup/gökkuşağı dağılımı ve üretim/hareket regresyon testleri son paket üzerinde geçti. Dar ekran ve açık/koyu görselleri kontrol edildi.
+- Önceki hedefler, 26 hız çarpanı 0,3, beş seviyenin yarım çıkış sıklığı ve 14/25/37 dağılım/yardımı korunur. 1. seviye hız kontrolü isteği iptal edildi; hiçbir hız kontrolü eklenmedi.
