@@ -34,3 +34,10 @@ Ayrıştırma, 100 seviyeye genişletme ve denge çalışmalarının izleri kayn
 ## 2026-10-27 — kaynak ve belge paketi
 
 Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgili test depoya eklendi. Depo yolları uyarlandı, Playwright bağımlılığı sabitlendi. Tarihsel dosyalar, kişisel teslim adresleri ve ekran görüntüleri dahil edilmedi; geliştirme dosyaları Pages yapılandırmasında hariç tutuldu. Önceki yerel/yayın notları tarihsel kayıt olarak korunur.
+
+## 2026-10-30 — seviye dengesi ve hedefler
+
+- 14, 25, 32, 33, 36, 37, 39, 40, 42, 44, 45, 46, 49, 50 ve 53. seviyelerde başlangıç/sürekli üretimde 4–7 topluk grup olasılığı %75; kalan gruplar 2–3 top. Koridor yardım aralıkları %60/%80/%90 ilerlemede 22/14/8 saniye; eşleşebilir gruplar ve gökkuşağı aralık/sayı sınırları korunur.
+- 17 seviyenin hedefleri güncellendi; kesin liste GAME_DESIGN.md içinde. 26. seviyenin son hedefi 300, nihai flowBoost çarpanı 0,3; üç koridorda uygulanır.
+- Kontroller: 100 seviye yapılandırma karşılaştırması, 17 hedef, üç koridorda hız oranları ve grup/gökkuşağı testi geçti. Eşleşme testi rastgele bir çalışmada hata verdi, sabit tohumla geçti; gerçek telefon oynanış testi yapılmadı.
+- Yayın hedefi mevcut main/index.html; depo adı ve Pages adresi değiştirilmez. Bu kayıt yayın paketini tanımlar; canlı dağıtım sonucu ayrıca doğrulanır.

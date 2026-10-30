@@ -40,7 +40,8 @@ Bilgilendirme açıkken sürükleme öğreticisi ve geçici puan/kombo yazılar�
 - Halat düzenleri: 7, 16, 22, 26, 34, 38, 43, 47, 60, 70, 80, 90, 95, 100. Alt yol kesişim maskesiyle çizilir.
 - 5 ve 9 eski Y dallanması olarak belgelenmez; mevcut yapı tek kaynaklıdır.
 - Hız süre, ilerleme, tempo ve seviye çarpanlarıyla değişir. Patlatılan her 25 top hız formülüne %5'lik basamak ekler; bu tek başına toplam hız değildir.
-- 16 ve 34 için flowBoost ×0,5; 25–49 tek kaynaklılar için ×1,5; 50–100 tek kaynaklılar için ×2 uygulanır.
+- 16 ve 34 için flowBoost ×0,5; 25–49 tek kaynaklılar için ×1,5; 50–100 tek kaynaklılar için ×2 uygulanır. Bu işlemlerden sonra 26. seviyenin flowBoost değerine ×0,3 uygulanır; üç koridorda da önceki ×0,4 ayarına göre hız çarpanı %25 azalır. Hedef hız formülüne de girdiğinden eski hedefle aynı patlatma sayısındaki hız oranı değişebilir.
+- 2026-10-30 hedef güncellemesi: 2→300, 19→200, 22→250, 26→300, 27→350, 29→250, 30→200, 31→200, 35→250, 39→300, 41→300, 43→250, 44→300, 49→300, 51→300, 52→200, 53→350. Nihai değerler LEVEL_GOALS üzerinden uygulanır.
 - Seviye kartları küçük kareler, genişliğe göre 4–7 sütun, kaydırma ve devam et içerir. Zor kartlar ayrı renk değildir; x2/x3 etiketi yoktur.
 
 ## Arayüz
@@ -50,3 +51,9 @@ Atom temalı giriş yaklaşık dört saniye sürer, dokunarak atlanır. Menüde 
 Duraklatma kutusu Küçük bir mola... başlığını, devam/menü ve ses/tema kontrollerini içerir. Seviye ekranı tema ile uyumludur. Kombo yerleşimi boş merkez, koridor altı, atom üstü/altı ve alt boşlukları arar; sıkışık düzende en az çakışan aday seçilebilir. Her geometride sıfır örtüşme garanti değildir.
 
 Puan yazıları atom merkezlerinden küçük biçimde çıkar; birden çok atomda aynı anda görünür. Tarayıcı etkileşim öncesi sesi engelleyebilir; otomatik ses her cihazda garanti değildir.
+
+### Seçili seviyelerde grup ve yardım dengesi (2026-10-30)
+
+14, 25, 32, 33, 36, 37, 39, 40, 42, 44, 45, 46, 49, 50 ve 53: başlangıç ve sürekli üretimde her yeni renk grubu %75 olasılıkla 4–7, %25 olasılıkla 2–3 toptur. Oran grup sayısına aittir; başlangıcın son grubu kuyrukta tamamlanabilir.
+
+Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’in skor eşiği, ön/giriş aday seçimi ve koridor başına iki gökkuşağı sınırı korunur. Yolun %60/%80/%90 ilerlemesinde yardım aralığı 22/14/8 saniyedir; skor eşiği daha erken yardım sağlayabilir. Yeni gökkuşağı mevcut olanlardan en az dört top aralığı uzaktadır. Dört topluk gruplar korunur; uzun grupların yalnız uçları dönüştürülür. Uygun aday yoksa yardım ertelenir. Eski kurtarma dalı ayrıca çalışmaz.
