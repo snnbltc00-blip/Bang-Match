@@ -8,7 +8,7 @@ const assert=require('assert/strict'),path=require('path'),{pathToFileURL}=requi
  const targets=[14,39,44,46,49],out=[];let unaffected=0;
  function run(lv,lane,fn,seconds,step,progress){
   window.testSeed=42;newSpiral(lv);activeBoosterInfo=null;use(lane);Ltot=1e9;ch.length=0;ch.push({d:0,c:0,g:0});sq.length=0;lastC=-1;helpCd=1e9;rev=0;pc=progress;spt=20;curSpd=1;let seed=42;const savedRnd=Math.random;Math.random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/4294967296);
-  try{for(let f=0;f<seconds/step;f++)fn(step);return{count:ch.length-1,front:ch[0].d,colors:ch.map(o=>o.c)}}finally{Math.random=savedRnd}
+  try{for(let f=0;f<seconds/step;f++){const count=ch.length;fn(step);if(lv===14&&fn===updOne&&ch.length>count&&ch[ch.length-1].d!==0)throw Error("spawn entrance");}return{count:ch.length-1,front:ch[0].d,colors:ch.map(o=>o.c)}}finally{Math.random=savedRnd}
  }
  for(let lv=1;lv<=100;lv++){
   newSpiral(lv);const lanes=SPS.length;

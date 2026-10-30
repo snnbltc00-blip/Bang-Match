@@ -61,3 +61,9 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - Kısa büyüme, hafif parlama, karartma ve seri tıklama koruması eklendi. Ödülsüz/kayıp akışı değişmez. Yenilemede ödül ve sonraki seviye kaydı korunur, kutucuk tekrar oynatılmaz.
 - Ödül bildirimi, özel toplar/kayıt, grup/gökkuşağı dağılımı ve üretim/hareket regresyon testleri son paket üzerinde geçti. Dar ekran ve açık/koyu görselleri kontrol edildi.
 - Önceki hedefler, 26 hız çarpanı 0,3, beş seviyenin yarım çıkış sıklığı ve 14/25/37 dağılım/yardımı korunur. 1. seviye hız kontrolü isteği iptal edildi; hiçbir hız kontrolü eklenmedi.
+
+## 2026-10-30 — yeni topların çıkış konumu
+
+- 14, 25, 36, 37, 39, 40, 42, 44, 45, 46, 50 ve 53. seviyelerde yeni toplar zincir kuyruğunda değil her koridorun girişinde (d=0) oluşturulur. Başlangıç dizilimi, hareket/boşluk kapatma formülü ve üretim çarpanları korunur.
+- Hata, girişten uzaklaşmış kuyruk için d=sonTop.d-SP kullanılmasıydı. İlk top 80–133 yol birimi ileride oluşabiliyordu; doğum konumu üretim sayacından ayrıldı.
+- Mobil 320/390 px testinde 12 seviyenin tüm koridorlarında giriş konumu doğrulandı. Diğer 88 seviyede önceki davranışla eşlik, yarım üretim oranları, grup/gökkuşağı ve ödül kutucuğu regresyonları geçti.

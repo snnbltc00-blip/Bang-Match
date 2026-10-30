@@ -62,7 +62,7 @@ Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’i
 
 ### Seyreltilmiş top çıkışı
 
-Yalnız 14, 39, 44, 46 ve 49. seviyelerde spawnRate=0,5: her koridor v/SP normal üretim referansının yarısı oranında üretim hakkı biriktirir. Hareket formülü ve zincire ekleme konumu değişmez; bu yüzden top giriş ucundan ilerideki zincir kuyruğuna eklenebilir. Başlangıç topları değişmez. Koridor başına en fazla bir hak tutulur; gecikme sonrası toplu üretim yapılmaz. Boş zincir de üretim aralığını bekler. Duraklama, buz ve geri çekilme sırasında sayaç ilerlemez; volkan seçimi oyun zamanı ölçeğini kullanır. Yeni seviyede sayaç sıfırlanır, kalıcı kayda eklenmez. Diğer 95 seviye eski üretim davranışındadır.
+Yalnız 14, 39, 44, 46 ve 49. seviyelerde spawnRate=0,5: her koridor v/SP normal üretim referansının yarısı oranında üretim hakkı biriktirir. Hareket formülü değişmez. 14, 25, 36, 37, 39, 40, 42, 44, 45, 46, 50 ve 53. seviyelerde yeni toplar her koridorun yol başlangıcında (d=0) oluşur; uzaklaşmış zincir kuyruğunda belirmez. Mevcut boşluk kapatma hareketi korunur. Bu düzeltme üretim sayacından bağımsızdır; 49 dahil diğer seviyelerin yerleştirme kuralı değişmez. Başlangıç topları değişmez. Koridor başına en fazla bir hak tutulur; gecikme sonrası toplu üretim yapılmaz. Boş zincir de üretim aralığını bekler. Duraklama, buz ve geri çekilme sırasında sayaç ilerlemez; volkan seçimi oyun zamanı ölçeğini kullanır. Yeni seviyede sayaç sıfırlanır, kalıcı kayda eklenmez. Diğer 95 seviye eski üretim davranışındadır.
 
 ### 14, 25 ve 37 için yoğun eşleşme ve yardım
 

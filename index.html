@@ -215,6 +215,7 @@ function blk(b,u){b.tm=(b.tm||0)-u;if(b.tm>0)return;b.tm=.25+rnd()*.9;
 if(st=='hunt'&&rnd()<.6){const T2=balls.filter(q=>ec(q)==tg);if(T2.length){const q=T2[rnd()*T2.length|0],d=Math.hypot(q.x-b.x,q.y-b.y)||1;b.vx=(q.x-b.x)/d;b.vy=(q.y-b.y)/d}}else{const a=rnd()*6.283;b.vx=Math.cos(a);b.vy=Math.sin(a)}
 const r=rnd();b.k=r<.35?.2:r<.7?2.4:3.6}
 const pos=d=>{const k=Math.max(0,Math.min(PX.length-1.001,d/3)),i=k|0,f=k-i;return[PX[i]+(PX[i+1]-PX[i])*f,PY[i]+(PY[i+1]-PY[i])*f]};
+const ENTRY_SPAWN_LEVELS=new Set([14,25,36,37,39,40,42,44,45,46,50,53]);
 const ENHANCED_LEVELS=new Set([14,25,37]);
 const BALANCED_LEVELS=new Set([14,25,32,33,36,37,39,40,42,44,45,46,49,50,53]);
 const ASSISTED_LEVELS=new Set([5,7,9,11,13,14,19,25,30,35]);
@@ -783,7 +784,7 @@ const lb2=ch[ch.length-1];if(!SPS[curI].branch){
  // Rate is independent of movement; cap credit to prevent catch-up bursts.
  if(CFG.spawnRate)lane.spawnCredit=Math.min(1,(lane.spawnCredit||0)+v*dt/SP*CFG.spawnRate);
  if(!CFG.spawnRate||lane.spawnCredit>=1){
-  if(!lb2||lb2.d>=SP){ch.push({d:lb2?lb2.d-SP:0,c:nextC(),g:0});if(CFG.spawnRate)lane.spawnCredit-=1}
+  if(!lb2||lb2.d>=SP){ch.push({d:ENTRY_SPAWN_LEVELS.has(level)?0:(lb2?lb2.d-SP:0),c:nextC(),g:0});if(CFG.spawnRate)lane.spawnCredit-=1}
  }
 }
 closeLinkedChain(SPS[curI]);
