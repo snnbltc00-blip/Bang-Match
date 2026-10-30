@@ -47,3 +47,10 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - Aynı 15 seviyede 4–7 topluk grup olasılığı %55, 2–3 topluk grup olasılığı %45 oldu. 4/5/6/7 topluk gruplar sırasıyla %25/%20/%7,5/%2,5; doğrudan 8 top üretilmez. Oyun içi birleşmeler daha uzun gruplar oluşturabilir.
 - %60/%80/%90 ilerlemede 22/14/8 saniyelik yardım, gökkuşağı sınırları ve eşleşebilir grup koruması değişmedi. Hedefler ve hızlar korunur.
 - Sabit tohumlu testte koridor başına 10.000 grup incelendi: uzun gruplar %53,80–55,79; 7 topluk gruplar %2,18–2,77. Yardım eşikleri, dört topluk gruplar, çoklu koridor ve 100 seviyede çizim kontrolleri geçti. Test depo yollarına uyarlandı.
+
+## 2026-10-30 — hedefler, seyrek çıkış ve üç seviyede yardım
+
+- Önceki yerel hedef değişiklikleri yayıma dahil: 36→250, 40→300, 42→300, 45→250, 46→350, 50→200, 53→250.
+- 14/39/44/46/49 için spawnRate=0,5 ve koridor başına üretim sayacı; ilerleme formülü değişmez. Kontrollü 60/120 Hz testinde üretim eski miktarın %49,1–50’si, zincir mesafesi aynı; diğer 95 seviyenin üretimi eski kodla eşleşti.
+- 14/25/37 için 2–3/4/5/6/7 topluk grup oranları %10/%20/%30/%25/%15. Yardım aralıkları %0–60/%60–80/%80–90/%90–100 için 22/16/10/6 saniye; temel skor tetikleyicisi ve gökkuşağı korumaları sürer.
+- Sürekli üretimde koridor başına 10.000, başlangıç üretiminde 2.000 örnek oran testleri geçti. Başlangıç grubunun kuyrukta kalan kısmı sayıldı; kısa yollarda tamamı ilk karede görünmeyebilir. Yardım/grup koruması, üretim/hareket regresyonu ve sabit tohumlu eşleşme testleri geçti. İnsan oynanış testi yapılmadı.

@@ -194,12 +194,13 @@ function blk(b,u){b.tm=(b.tm||0)-u;if(b.tm>0)return;b.tm=.25+rnd()*.9;
 if(st=='hunt'&&rnd()<.6){const T2=balls.filter(q=>ec(q)==tg);if(T2.length){const q=T2[rnd()*T2.length|0],d=Math.hypot(q.x-b.x,q.y-b.y)||1;b.vx=(q.x-b.x)/d;b.vy=(q.y-b.y)/d}}else{const a=rnd()*6.283;b.vx=Math.cos(a);b.vy=Math.sin(a)}
 const r=rnd();b.k=r<.35?.2:r<.7?2.4:3.6}
 const pos=d=>{const k=Math.max(0,Math.min(PX.length-1.001,d/3)),i=k|0,f=k-i;return[PX[i]+(PX[i+1]-PX[i])*f,PY[i]+(PY[i+1]-PY[i])*f]};
+const ENHANCED_LEVELS=new Set([14,25,37]);
 const BALANCED_LEVELS=new Set([14,25,32,33,36,37,39,40,42,44,45,46,49,50,53]);
 const ASSISTED_LEVELS=new Set([5,7,9,11,13,14,19,25,30,35]);
 function nextC(){const assisted=ASSISTED_LEVELS.has(level)||BALANCED_LEVELS.has(level);
  // Assisted levels place rainbows on the corridor instead of at its entrance.
  if(!sq.length){let c;do{c=rnd()*5|0}while(c==lastC);
- let n;if(BALANCED_LEVELS.has(level)){const roll=rnd();n=roll<.225?2:roll<.45?3:roll<.70?4:roll<.90?5:roll<.975?6:7}else if(assisted){sq.assistStep=(sq.assistStep||0)%5;n=sq.assistStep%2?(rnd()<.5?2:3):4+(rnd()<.5?0:1);sq.assistStep++}else if(level<=5){sq.earlyStep=(sq.earlyStep||0)%3;n=sq.earlyStep===2?(rnd()<.5?2:3):4;sq.earlyStep++}else if(!sq.shortLeft){n=rnd()<.85?4:5;sq.shortLeft=1+(rnd()<.65?1:0)}else{n=rnd()<.45?2:3;sq.shortLeft--}
+ let n;if(ENHANCED_LEVELS.has(level)){const roll=rnd();n=roll<.05?2:roll<.10?3:roll<.30?4:roll<.60?5:roll<.85?6:7}else if(BALANCED_LEVELS.has(level)){const roll=rnd();n=roll<.225?2:roll<.45?3:roll<.70?4:roll<.90?5:roll<.975?6:7}else if(assisted){sq.assistStep=(sq.assistStep||0)%5;n=sq.assistStep%2?(rnd()<.5?2:3):4+(rnd()<.5?0:1);sq.assistStep++}else if(level<=5){sq.earlyStep=(sq.earlyStep||0)%3;n=sq.earlyStep===2?(rnd()<.5?2:3):4;sq.earlyStep++}else if(!sq.shortLeft){n=rnd()<.85?4:5;sq.shortLeft=1+(rnd()<.65?1:0)}else{n=rnd()<.45?2:3;sq.shortLeft--}
  for(let i=0;i<n;i++)sq.push(c);lastC=c}
  if(!assisted&&pc>=nextRb){nextRb+=(CFG.wild||50);return 5}return sq.shift()}
 
@@ -223,7 +224,7 @@ function assistRainbow(pg){
  const preferred=preferEntry?entry:front,fallback=preferEntry?front:entry;
  const candidates=preferred.length?preferred:fallback;if(!candidates.length)return;
  const o=candidates[rnd()*candidates.length|0];o.c=5;lane.assistCount=(lane.assistCount||0)+1;
- helpCd=balanced?(pg>=.90?8:pg>=.80?14:22):(pg>=.85?14:22);
+ helpCd=ENHANCED_LEVELS.has(level)?(pg>=.90?6:pg>=.80?10:pg>=.60?16:22):balanced?(pg>=.90?8:pg>=.80?14:22):(pg>=.85?14:22);
  if(scoreDue)nextRb=pc+(CFG.wild||50);
  const [px,py]=pos(o.d);addP(px,py,'#fff',12,220);snd(1047,.25,'sine',.12);
 }
@@ -474,7 +475,7 @@ for(const [lv,knot] of Object.entries(KNOT_LEVELS)){
  const cfg=LVC[+lv-1];cfg.sources=knot.sources;cfg.n=knot.sources;cfg.braid=knot.turns;cfg.v0*=.8;MULTI_SOURCE_LEVELS[lv]=knot.sources;BRAID_LEVELS[lv]=knot.turns;
 }
 
-const LEVEL_GOALS={"2":300,"6":300,"8":200,"10":270,"12":170,"15":200,"16":250,"17":350,"18":200,"19":200,"20":300,"22":250,"25":300,"26":300,"27":350,"29":250,"30":200,"31":200,"33":200,"34":350,"35":250,"37":350,"39":300,"40":350,"41":300,"43":250,"44":300,"45":500,"47":400,"48":400,"49":300,"50":400,"51":300,"52":200,"53":350};
+const LEVEL_GOALS={"2":300,"6":300,"8":200,"10":270,"12":170,"15":200,"16":250,"17":350,"18":200,"19":200,"20":300,"22":250,"25":300,"26":300,"27":350,"29":250,"30":200,"31":200,"33":200,"34":350,"35":250,"36":250,"37":350,"39":300,"40":300,"41":300,"42":300,"43":250,"44":300,"45":250,"46":350,"47":400,"48":400,"49":300,"50":200,"51":300,"52":200,"53":250};
 for(const [number,goal] of Object.entries(LEVEL_GOALS))LVC[Number(number)-1].goal=goal;
 for(const number of [16,34])LVC[number-1].flowBoost=(LVC[number-1].flowBoost||1)*.5;
 for(let number=25;number<=100;number++){
@@ -483,6 +484,7 @@ for(let number=25;number<=100;number++){
 }
 
 LVC[25].flowBoost=(LVC[25].flowBoost||1)*.3;
+for(const number of [14,39,44,46,49])LVC[number-1].spawnRate=.5;
 
 function use(i){const o=SPS[i];curI=i;ch=o.ch;sq=o.sq;lastC=o.lastC;PX=o.PX;PY=o.PY;Ltot=o.Ltot;CX=o.CX;CY=o.CY;BR=o.BR;SP=o.SP;rev=o.rev;revCd=o.revCd;helpCd=o.helpCd;curSpd=o.spd}
 function save(i){const o=SPS[i];o.ch=ch;o.sq=sq;o.lastC=lastC;o.rev=rev;o.revCd=revCd;o.helpCd=helpCd}
@@ -755,7 +757,13 @@ if(SPS[curI].fork){
 
  }
 }
-const lb2=ch[ch.length-1];if(!SPS[curI].branch){if(!lb2)ch.push({d:0,c:nextC(),g:0});else if(lb2.d>=SP)ch.push({d:lb2.d-SP,c:nextC(),g:0});
+const lb2=ch[ch.length-1];if(!SPS[curI].branch){
+ const lane=SPS[curI];
+ // Rate is independent of movement; cap credit to prevent catch-up bursts.
+ if(CFG.spawnRate)lane.spawnCredit=Math.min(1,(lane.spawnCredit||0)+v*dt/SP*CFG.spawnRate);
+ if(!CFG.spawnRate||lane.spawnCredit>=1){
+  if(!lb2||lb2.d>=SP){ch.push({d:lb2?lb2.d-SP:0,c:nextC(),g:0});if(CFG.spawnRate)lane.spawnCredit-=1}
+ }
 }
 closeLinkedChain(SPS[curI]);
 if(!SPS[curI].fork&&ch.length&&ch[0].d>=Ltot)lose(null,'Sarmal doldu!')}
