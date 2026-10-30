@@ -67,3 +67,9 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - 14, 25, 36, 37, 39, 40, 42, 44, 45, 46, 50 ve 53. seviyelerde yeni toplar zincir kuyruğunda değil her koridorun girişinde (d=0) oluşturulur. Başlangıç dizilimi, hareket/boşluk kapatma formülü ve üretim çarpanları korunur.
 - Hata, girişten uzaklaşmış kuyruk için d=sonTop.d-SP kullanılmasıydı. İlk top 80–133 yol birimi ileride oluşabiliyordu; doğum konumu üretim sayacından ayrıldı.
 - Mobil 320/390 px testinde 12 seviyenin tüm koridorlarında giriş konumu doğrulandı. Diğer 88 seviyede önceki davranışla eşlik, yarım üretim oranları, grup/gökkuşağı ve ödül kutucuğu regresyonları geçti.
+
+## 2026-10-30 — dört seviyenin başlangıç yerleşimi düzeltmesi
+
+14/39/44/46 seviyelerinde koridor başlangıçta ilerisine kadar dolduruluyordu; önceki doğum-konumu düzeltmesi bu hazır dizilimi kapsamıyordu. Artık ilk top girişte görünür, kalan başlangıç renkleri mevcut sq kuyruğundan normal aralıklarla çıkar. Ayrı üretim sistemi eklenmedi; renk sırası, grup dağılımı, geometri, hareket formülü ve spawnRate=0,5 korunur. Bu dört seviyenin ilk karede görünür top sayısı koridor başına birdir.
+
+320/390 px üzerinde 12 saniyelik gerçek upd+draw akışı, başlangıç renk kuyruğu eşliği ve her doğumun d=0 olması doğrulandı. İlk kare görselleri açık/koyu temada incelendi. Giriş-konumu, üretim/hareket ve grup/gökkuşağı regresyonları geçti.

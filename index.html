@@ -215,6 +215,7 @@ function blk(b,u){b.tm=(b.tm||0)-u;if(b.tm>0)return;b.tm=.25+rnd()*.9;
 if(st=='hunt'&&rnd()<.6){const T2=balls.filter(q=>ec(q)==tg);if(T2.length){const q=T2[rnd()*T2.length|0],d=Math.hypot(q.x-b.x,q.y-b.y)||1;b.vx=(q.x-b.x)/d;b.vy=(q.y-b.y)/d}}else{const a=rnd()*6.283;b.vx=Math.cos(a);b.vy=Math.sin(a)}
 const r=rnd();b.k=r<.35?.2:r<.7?2.4:3.6}
 const pos=d=>{const k=Math.max(0,Math.min(PX.length-1.001,d/3)),i=k|0,f=k-i;return[PX[i]+(PX[i+1]-PX[i])*f,PY[i]+(PY[i+1]-PY[i])*f]};
+const ENTRY_START_LEVELS=new Set([14,39,44,46]);
 const ENTRY_SPAWN_LEVELS=new Set([14,25,36,37,39,40,42,44,45,46,50,53]);
 const ENHANCED_LEVELS=new Set([14,25,37]);
 const BALANCED_LEVELS=new Set([14,25,32,33,36,37,39,40,42,44,45,46,49,50,53]);
@@ -625,6 +626,8 @@ SPS.forEach((o,i)=>{o.fc=CORE_COLORS[(level-1+(o.sharedCore?0:i*3))%20];use(i);
  const count=o.branch?0:Math.min(wanted,Math.max(3,Math.floor(Ltot/SP*(level===4?.48:.42))-2));
  for(let j=0;j<count;j++)ch.push({d:(count-1-j)*SP+SP*2,c:nextC(),g:0});
  if(level>=5&&!o.branch&&!o.fork){const advance=Math.min(SP*2,Math.max(0,Ltot*.60-SP*(count+1)));for(const b of ch)b.d+=advance}
+ // Feed the initial colors through the existing queue instead of pre-filling mid-route.
+ if(ENTRY_START_LEVELS.has(level)&&!o.branch&&ch.length){sq.unshift(...ch.slice(1).map(b=>b.c));ch.splice(1);ch[0].d=0}
  save(i);
 });use(0);if(lessonDrag){for(let i=0;i<Math.min(4,ch.length);i++)ch[i].c=1}grantStarterBoosters();saveProgress();showNextBoosterInfo()}
 // Büyülü yıldız: dokununca kenara uçar, 10 saniye boyunca yalnız/ikili gruplara şimşek yollar.

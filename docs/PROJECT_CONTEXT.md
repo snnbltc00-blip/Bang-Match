@@ -67,6 +67,7 @@ Kökte `node DOSYA.cjs` ile ilgili testi çalıştır; önce hedefini ve varsay�
 |---|---|
 | [verify-bang-reward-notice.cjs](../verify-bang-reward-notice.cjs) | Tekli/çoklu ödül, çift tıklama, ödülsüz/kayıp/son seviye akışı, yeniden yükleme ve mobil/tema görselleri. |
 | [verify-bang-boosters.cjs](../verify-bang-boosters.cjs) | İlk hediye, modal sırası/durması, ödüller, yeniden yükleme ve kayıt geçişi. |
+| [verify-bang-entry-start.cjs](../verify-bang-entry-start.cjs) | Dört seviyede ilk kare/girişten sırayla çıkış; başlangıç renk kuyruğu eşliği, geometri ve gerçek upd+draw akışı. |
 | [verify-bang-entry-spawn.cjs](../verify-bang-entry-spawn.cjs) | 12 seviyede d=0 giriş konumu, mobil 320/390 px ve diğer 88 seviyede davranış eşliği. |
 | [verify-bang-spawn-rate.cjs](../verify-bang-spawn-rate.cjs) | Beş seviyede çıkış/hareket oranları, 95 seviyede eski üretim karşılaştırması, koridor sayacı ve buz/geri çekilme. |
 | [verify-bang-selected-balance.cjs](../verify-bang-selected-balance.cjs) | Başlangıç/sürekli grup dağılımı, gökkuşağı eşikleri ve grup koruması. |
