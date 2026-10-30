@@ -199,7 +199,7 @@ const ASSISTED_LEVELS=new Set([5,7,9,11,13,14,19,25,30,35]);
 function nextC(){const assisted=ASSISTED_LEVELS.has(level)||BALANCED_LEVELS.has(level);
  // Assisted levels place rainbows on the corridor instead of at its entrance.
  if(!sq.length){let c;do{c=rnd()*5|0}while(c==lastC);
- let n;if(BALANCED_LEVELS.has(level)){n=rnd()<.75?4+(rnd()*4|0):2+(rnd()*2|0)}else if(assisted){sq.assistStep=(sq.assistStep||0)%5;n=sq.assistStep%2?(rnd()<.5?2:3):4+(rnd()<.5?0:1);sq.assistStep++}else if(level<=5){sq.earlyStep=(sq.earlyStep||0)%3;n=sq.earlyStep===2?(rnd()<.5?2:3):4;sq.earlyStep++}else if(!sq.shortLeft){n=rnd()<.85?4:5;sq.shortLeft=1+(rnd()<.65?1:0)}else{n=rnd()<.45?2:3;sq.shortLeft--}
+ let n;if(BALANCED_LEVELS.has(level)){const roll=rnd();n=roll<.225?2:roll<.45?3:roll<.70?4:roll<.90?5:roll<.975?6:7}else if(assisted){sq.assistStep=(sq.assistStep||0)%5;n=sq.assistStep%2?(rnd()<.5?2:3):4+(rnd()<.5?0:1);sq.assistStep++}else if(level<=5){sq.earlyStep=(sq.earlyStep||0)%3;n=sq.earlyStep===2?(rnd()<.5?2:3):4;sq.earlyStep++}else if(!sq.shortLeft){n=rnd()<.85?4:5;sq.shortLeft=1+(rnd()<.65?1:0)}else{n=rnd()<.45?2:3;sq.shortLeft--}
  for(let i=0;i<n;i++)sq.push(c);lastC=c}
  if(!assisted&&pc>=nextRb){nextRb+=(CFG.wild||50);return 5}return sq.shift()}
 

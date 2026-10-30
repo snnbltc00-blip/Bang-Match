@@ -41,3 +41,9 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - 17 seviyenin hedefleri güncellendi; kesin liste GAME_DESIGN.md içinde. 26. seviyenin son hedefi 300, nihai flowBoost çarpanı 0,3; üç koridorda uygulanır.
 - Kontroller: 100 seviye yapılandırma karşılaştırması, 17 hedef, üç koridorda hız oranları ve grup/gökkuşağı testi geçti. Eşleşme testi rastgele bir çalışmada hata verdi, sabit tohumla geçti; gerçek telefon oynanış testi yapılmadı.
 - Yayın hedefi mevcut main/index.html; depo adı ve Pages adresi değiştirilmez. Bu kayıt yayın paketini tanımlar; canlı dağıtım sonucu ayrıca doğrulanır.
+
+## 2026-10-30 — grup dağılımının yeniden dengelenmesi
+
+- Aynı 15 seviyede 4–7 topluk grup olasılığı %55, 2–3 topluk grup olasılığı %45 oldu. 4/5/6/7 topluk gruplar sırasıyla %25/%20/%7,5/%2,5; doğrudan 8 top üretilmez. Oyun içi birleşmeler daha uzun gruplar oluşturabilir.
+- %60/%80/%90 ilerlemede 22/14/8 saniyelik yardım, gökkuşağı sınırları ve eşleşebilir grup koruması değişmedi. Hedefler ve hızlar korunur.
+- Sabit tohumlu testte koridor başına 10.000 grup incelendi: uzun gruplar %53,80–55,79; 7 topluk gruplar %2,18–2,77. Yardım eşikleri, dört topluk gruplar, çoklu koridor ve 100 seviyede çizim kontrolleri geçti. Test depo yollarına uyarlandı.

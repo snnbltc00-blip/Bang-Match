@@ -54,6 +54,6 @@ Puan yazıları atom merkezlerinden küçük biçimde çıkar; birden çok atomd
 
 ### Seçili seviyelerde grup ve yardım dengesi (2026-10-30)
 
-14, 25, 32, 33, 36, 37, 39, 40, 42, 44, 45, 46, 49, 50 ve 53: başlangıç ve sürekli üretimde her yeni renk grubu %75 olasılıkla 4–7, %25 olasılıkla 2–3 toptur. Oran grup sayısına aittir; başlangıcın son grubu kuyrukta tamamlanabilir.
+14, 25, 32, 33, 36, 37, 39, 40, 42, 44, 45, 46, 49, 50 ve 53: başlangıç ve sürekli üretimde her yeni renk grubu %55 olasılıkla 4–7, %45 olasılıkla 2–3 toptur. Grup dağılımı: 2 ve 3 top ayrı ayrı %22,5; 4 top %25; 5 top %20; 6 top %7,5; 7 top %2,5. Üretimde 8 topluk grup yoktur; oyun sırasında grupların birleşmesi daha uzun diziler oluşturabilir. Oran grup sayısına aittir; başlangıcın son grubu kuyrukta tamamlanabilir.
 
 Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’in skor eşiği, ön/giriş aday seçimi ve koridor başına iki gökkuşağı sınırı korunur. Yolun %60/%80/%90 ilerlemesinde yardım aralığı 22/14/8 saniyedir; skor eşiği daha erken yardım sağlayabilir. Yeni gökkuşağı mevcut olanlardan en az dört top aralığı uzaktadır. Dört topluk gruplar korunur; uzun grupların yalnız uçları dönüştürülür. Uygun aday yoksa yardım ertelenir. Eski kurtarma dalı ayrıca çalışmaz.
