@@ -85,3 +85,7 @@ Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Ma
 ## 2026-10-31 — 39/44 grup ve hız düzenlemesi
 
 39/44 başlangıç ve sürekli üretiminde 4–6 grup oranı %75 (4:%25, 5:%30, 6:%20); 7 oranı %2,5 korunur. Nihai flowBoost ×0,8 ile toplam ilerleme hızı %20 azaltıldı. Bekleyen hedefler de dahil: 14→200, 46→250, 49→200. Grup testi: sürekli 10.000, başlangıç 2.000 örnek; gökkuşağı, standart üretim ve tempo/hız kontrolleri geçti. Gerçek telefon oynanış testi yapılmadı.
+
+## 2026-10-31 — 50–100 genel hız dengesi
+
+Genel tek-kaynak çarpanı 2’den 1,5’e indirildi. Sabit istisna listesi: 54,55,66,73,75,79,88,90,96,97. Çoklu koridor koşulu değişmediğinden 90 dahil 60/70/80/90/95/100 özel hızları korunur. 25/26/53 nihai ayarları aynı; 35 seviyenin ilerlemesi %25 azaldı, diğer 65 seviye aynı kaldı. 100 seviye yapılandırma/başlangıç ve koridor başına 36 süre/puan hız örneği, standart üretim, grup/gökkuşağı testleri geçti. Gerçek telefon oynanış testi yapılmadı.

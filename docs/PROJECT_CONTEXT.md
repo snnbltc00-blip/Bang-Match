@@ -69,6 +69,7 @@ Kökte `node DOSYA.cjs` ile ilgili testi çalıştır; önce hedefini ve varsay�
 | [verify-bang-boosters.cjs](../verify-bang-boosters.cjs) | İlk hediye, modal sırası/durması, ödüller, yeniden yükleme ve kayıt geçişi. |
 | [verify-bang-entry-start.cjs](../verify-bang-entry-start.cjs) | Yedi seviyede standart başlangıç dizilimi, gerçek upd+draw akışında aralıklar; dar açık/koyu görünüm. |
 | [verify-bang-entry-spawn.cjs](../verify-bang-entry-spawn.cjs) | Korunan altı seviyede d=0 giriş konumu, mobil 320/390 px; diğer 94 seviyede standart yerleştirme eşliği. |
+| [verify-bang-late-flow.cjs](../verify-bang-late-flow.cjs) | 50–100 genel çarpanı, sabit istisnalar, çoklu koridorlar ve 25/26/53; 100 seviye başlangıç/yapılandırma ve gerçek ilerleme regresyonu. |
 | [verify-bang-flow-balance.cjs](../verify-bang-flow-balance.cjs) | Standart üretim/aralık, 25/53 toplam hız ve tempo, buz/duraklatma/geri çekilme; --capture/--compare ile değişiklik öncesi çalışma ölçümlerine karşı 93 seviye regresyonu. Eski verify-bang-spawn-rate.cjs bu teste yönlenir. |
 | [verify-bang-selected-balance.cjs](../verify-bang-selected-balance.cjs) | Başlangıç/sürekli grup dağılımı, gökkuşağı eşikleri ve grup koruması. |
 | [verify-bang-four-collision.cjs](../verify-bang-four-collision.cjs) | Otomatik tam dört patlatma; elle seçimin korunması. |
