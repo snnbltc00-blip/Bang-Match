@@ -43,7 +43,7 @@ Başarılı seviye sonunda envanteri gerçekten artan özel toplar için, 2,8 sa
 - 5 ve 9 eski Y dallanması olarak belgelenmez; mevcut yapı tek kaynaklıdır.
 - Hız süre, ilerleme, tempo ve seviye çarpanlarıyla değişir. Patlatılan her 25 top hız formülüne %5'lik basamak ekler; bu tek başına toplam hız değildir.
 - 16 ve 34 için flowBoost ×0,5; 25–49 tek kaynaklılar için ×1,5; 50–100 tek kaynaklılar için ×2 uygulanır. Bu işlemlerden sonra 26. seviyenin flowBoost değerine ×0,3 uygulanır; üç koridorda da önceki ×0,4 ayarına göre hız çarpanı %25 azalır. Hedef hız formülüne de girdiğinden eski hedefle aynı patlatma sayısındaki hız oranı değişebilir.
-- 2026-10-30 hedef güncellemesi: 2→300, 19→200, 22→250, 26→300, 27→350, 29→250, 30→200, 31→200, 35→250, 36→250, 39→300, 40→300, 41→300, 42→300, 43→250, 44→300, 45→250, 46→350, 49→300, 50→200, 51→300, 52→200, 53→250. Nihai değerler LEVEL_GOALS üzerinden uygulanır.
+- 2026-10-30 hedef güncellemesi: 2→300, 19→200, 22→250, 26→300, 27→350, 29→250, 30→200, 31→200, 35→250, 36→250, 39→300, 40→300, 41→300, 42→300, 43→250, 44→300, 45→250, 46→350, 49→300, 50→200, 51→300, 52→200, 53→250. Nihai değerler LEVEL_GOALS üzerinden uygulanır. 2026-10-31: 14. seviyenin hedefi 380’den 200 topa, 46. seviyenin hedefi 350’den 250 topa, 49. seviyenin hedefi 300’den 200 topa indirildi.
 - Seviye kartları küçük kareler, genişliğe göre 4–7 sütun, kaydırma ve devam et içerir. Zor kartlar ayrı renk değildir; x2/x3 etiketi yoktur.
 
 ## Arayüz
@@ -56,7 +56,7 @@ Puan yazıları atom merkezlerinden küçük biçimde çıkar; birden çok atomd
 
 ### Seçili seviyelerde grup ve yardım dengesi (2026-10-30)
 
-32, 33, 36, 39, 40, 42, 44, 45, 46, 49, 50 ve 53: başlangıç ve sürekli üretimde her yeni renk grubu %55 olasılıkla 4–7, %45 olasılıkla 2–3 toptur. Grup dağılımı: 2 ve 3 top ayrı ayrı %22,5; 4 top %25; 5 top %20; 6 top %7,5; 7 top %2,5. Üretimde 8 topluk grup yoktur; oyun sırasında grupların birleşmesi daha uzun diziler oluşturabilir. Oran grup sayısına aittir; başlangıcın son grubu kuyrukta tamamlanabilir.
+32, 33, 36, 40, 42, 45, 46, 49, 50 ve 53: başlangıç ve sürekli üretimde her yeni renk grubu %55 olasılıkla 4–7, %45 olasılıkla 2–3 toptur. Grup dağılımı: 2 ve 3 top ayrı ayrı %22,5; 4 top %25; 5 top %20; 6 top %7,5; 7 top %2,5. Üretimde 8 topluk grup yoktur; oyun sırasında grupların birleşmesi daha uzun diziler oluşturabilir. Oran grup sayısına aittir; başlangıcın son grubu kuyrukta tamamlanabilir.
 
 Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’in skor eşiği, ön/giriş aday seçimi ve koridor başına iki gökkuşağı sınırı korunur. Yolun %60/%80/%90 ilerlemesinde yardım aralığı 22/14/8 saniyedir; skor eşiği daha erken yardım sağlayabilir. Yeni gökkuşağı mevcut olanlardan en az dört top aralığı uzaktadır. Dört topluk gruplar korunur; uzun grupların yalnız uçları dönüştürülür. Uygun aday yoksa yardım ertelenir. Eski kurtarma dalı ayrıca çalışmaz.
 
@@ -73,3 +73,7 @@ Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’i
 Bu üç seviyede başlangıç ve sürekli üretimin grup dağılımı: 2/3/4/5/6/7 top sırasıyla %5/%5/%20/%30/%25/%15. Başlangıç zincirinin son grubu kuyrukta tamamlanabilir. Diğer dengelenmiş seviyelerin dağılımı değişmez.
 
 assistRainbow yardım beklemesi %0–60 için 22 saniye (mevcut skor eşiğiyle tetikleme), %60–80 için 16, %80–90 için 10 ve %90–100 için 6 saniyedir. Koridor başına iki gökkuşağı sınırı, dört top aralığı uzaklık, seçili topların korunması ve uzun grupların yalnız ucuna yerleştirme sürer; uygun aday yoksa yardım ertelenir. Tam dört topluk gruplar bölünmez. Bu grubun renk/yardım ayarları, 14 için standart üretime dönüşten ve 25 için yukarıdaki hız azaltımından bağımsızdır; 37 ilerleme hızı ve bütün hedefler korunur.
+
+### 39 ve 44 grup/hız dengesi (2026-10-31)
+
+Başlangıç ve sürekli üretimde 2/3/4/5/6/7 topluk grup oranları %11,25/%11,25/%25/%30/%20/%2,5. 4–6 toplamı %52,5’ten %75’e çıkarıldı; 7 oranı artırılmadı. Nihai flowBoost 1,5×0,8=1,2: aynı süre/puan/tempo koşullarında ilerleme hızı %20 azalır. Standart üretim, gökkuşağı yardımı ve yollar korunur.
