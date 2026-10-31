@@ -34,12 +34,12 @@ const baselineFile=path.join(os.tmpdir(),'bang-flow-before.json');
     if(!actual.born)throw Error('no production');production.push({lv,lane:k,hz:Math.round(1/step),born:actual.born});
    }
   }
-  if(LVC[24].flowBoost!==1||LVC[52].flowBoost!==1.2||LVC[25].flowBoost!==.3)throw Error('final speed override');
+  if([38,43].some(i=>Math.abs(LVC[i].flowBoost/1.5-.8)>1e-12)||LVC[24].flowBoost!==1||LVC[52].flowBoost!==1.2||LVC[25].flowBoost!==.3)throw Error('final speed override');
   for(const lv of targets){init(lv);const before=JSON.stringify(SPS);iceRemaining=2;updSp(1);if(JSON.stringify(SPS)!==before)throw Error('ice');iceRemaining=0;paused=true;loop(performance.now());if(JSON.stringify(SPS)!==before)throw Error('pause');paused=false;
    init(lv);use(0);ch[0].d=Ltot*.8;rev=1;const n=ch.length,d=ch[0].d;updOne(.01);if(ch.length>n||ch[0].d>=d)throw Error('reverse');
   }
   const tempo=[];
-  for(const lv of [18,21,24,25,53]){init(lv);const originalBoost=CFG.flowBoost,boost=originalBoost||1;let min=Infinity,max=0;
+  for(const lv of [18,21,24,25,39,44,53]){init(lv);const originalBoost=CFG.flowBoost,boost=originalBoost||1;let min=Infinity,max=0;
    // Cover full tempo cycles, early boost cutoff, capped time boost and every score step.
    for(const progress of Array.from({length:Math.ceil(CFG.goal/25)},(_,i)=>i*25).concat([CFG.goal-1]))for(const base of [0,8,56,160,240])for(let phase=0;phase<8;phase+=.25){
     const sample=flow=>{CFG.flowBoost=flow;pc=progress;spt=base+phase;magicNext=1e9;SPS.forEach(l=>{l.ch=[{d:0,c:0,g:0}];l.helpCd=1e9});updSp(1/120);return SPS.map(l=>l.ch[0].d*120);};
