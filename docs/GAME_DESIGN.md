@@ -60,12 +60,16 @@ Puan yazıları atom merkezlerinden küçük biçimde çıkar; birden çok atomd
 
 Bu seviyeler girişte gökkuşağı yerine assistRainbow kullanır. 14 ve 25’in skor eşiği, ön/giriş aday seçimi ve koridor başına iki gökkuşağı sınırı korunur. Yolun %60/%80/%90 ilerlemesinde yardım aralığı 22/14/8 saniyedir; skor eşiği daha erken yardım sağlayabilir. Yeni gökkuşağı mevcut olanlardan en az dört top aralığı uzaktadır. Dört topluk gruplar korunur; uzun grupların yalnız uçları dönüştürülür. Uygun aday yoksa yardım ertelenir. Eski kurtarma dalı ayrıca çalışmaz.
 
-### Seyreltilmiş top çıkışı
+### Standart top çıkışı ve seçili hız dengesi (2026-10-31)
 
-Yalnız 14, 39, 44, 46 ve 49. seviyelerde spawnRate=0,5: her koridor v/SP normal üretim referansının yarısı oranında üretim hakkı biriktirir. Hareket formülü değişmez. 14, 25, 36, 37, 39, 40, 42, 44, 45, 46, 50 ve 53. seviyelerde yeni toplar her koridorun yol başlangıcında (d=0) oluşur; uzaklaşmış zincir kuyruğunda belirmez. Mevcut boşluk kapatma hareketi korunur. Bu düzeltme üretim sayacından bağımsızdır; 49 dahil diğer seviyelerin yerleştirme kuralı değişmez. 14/39/44/46 dışında başlangıç yerleşimi değişmez. Bu dört seviyede başlangıçta yalnız ilk top d=0 konumunda görünür; eski başlangıç dizisinin kalan renkleri mevcut sq kuyruğuna alınır ve normal üretim aralığıyla girişten çıkar. Renk sırası ve grup dağılımı korunur; koridor önceden ortasına kadar doldurulmaz. Koridor başına en fazla bir hak tutulur; gecikme sonrası toplu üretim yapılmaz. Boş zincir de üretim aralığını bekler. Duraklama, buz ve geri çekilme sırasında sayaç ilerlemez; volkan seçimi oyun zamanı ölçeğini kullanır. Yeni seviyede sayaç sıfırlanır, kalıcı kayda eklenmez. Diğer 95 seviye eski üretim davranışındadır.
+14, 39, 44, 46 ve 49 için spawnRate=0,5 ayarı ve üretim sayacı kaldırıldı. 14/39/44/46 başlangıçta standart hazır zinciri kullanır; tek top gösterip kalanını kuyruğa taşıyan ENTRY_START_LEVELS istisnası kaldırıldı. Bu beş seviye ile 25/53, standart SP zincir aralığını ve sonTop.d-SP ekleme kuralını kullanır; boş zincire ilk top d=0 konumunda eklenir. Ek bir bekleme veya toplu üretim sistemi yoktur. Standart başlangıçta koridorun ilk bölümü önceden doludur.
+
+25 için nihai flowBoost 1,5→1 (%33,3 azalma), 53 için 2→1,2 (%40 azalma). Bu sabit çarpan, süre/puan/tempo dahil ilerleme hızının tamamına uygulanır; mevcut v0, tempo döngüsü ve hızlanma basamakları korunur. Normal top üretimi hareket ve zincir aralığına bağlıdır. Yeni bir spawnRate sistemi kullanılmaz. 26 hız ayarı değişmez.
+
+36, 37, 40, 42, 45 ve 50 için mevcut d=0 giriş yerleştirmesi korunur. Diğer 93 seviyenin davranışı, bütün hedefler, renk grupları, gökkuşağı yardımı, yollar, özel toplar ve kayıtlar değişmez.
 
 ### 14, 25 ve 37 için yoğun eşleşme ve yardım
 
 Bu üç seviyede başlangıç ve sürekli üretimin grup dağılımı: 2/3/4/5/6/7 top sırasıyla %5/%5/%20/%30/%25/%15. Başlangıç zincirinin son grubu kuyrukta tamamlanabilir. Diğer dengelenmiş seviyelerin dağılımı değişmez.
 
-assistRainbow yardım beklemesi %0–60 için 22 saniye (mevcut skor eşiğiyle tetikleme), %60–80 için 16, %80–90 için 10 ve %90–100 için 6 saniyedir. Koridor başına iki gökkuşağı sınırı, dört top aralığı uzaklık, seçili topların korunması ve uzun grupların yalnız ucuna yerleştirme sürer; uygun aday yoksa yardım ertelenir. Tam dört topluk gruplar bölünmez. 14. seviyenin spawnRate=0,5 ayarı, 25/37 ilerleme hızları ve bütün hedefler korunur.
+assistRainbow yardım beklemesi %0–60 için 22 saniye (mevcut skor eşiğiyle tetikleme), %60–80 için 16, %80–90 için 10 ve %90–100 için 6 saniyedir. Koridor başına iki gökkuşağı sınırı, dört top aralığı uzaklık, seçili topların korunması ve uzun grupların yalnız ucuna yerleştirme sürer; uygun aday yoksa yardım ertelenir. Tam dört topluk gruplar bölünmez. Bu grubun renk/yardım ayarları, 14 için standart üretime dönüşten ve 25 için yukarıdaki hız azaltımından bağımsızdır; 37 ilerleme hızı ve bütün hedefler korunur.

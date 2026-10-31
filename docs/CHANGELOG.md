@@ -75,3 +75,9 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 320/390 px üzerinde 12 saniyelik gerçek upd+draw akışı, başlangıç renk kuyruğu eşliği ve her doğumun d=0 olması doğrulandı. İlk kare görselleri açık/koyu temada incelendi. Giriş-konumu, üretim/hareket ve grup/gökkuşağı regresyonları geçti.
 
 Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Match/commit/4909576467bc644f6fe24d0e6653d99f8b43a359). Mobil test, yalnız üretim fonksiyonunu değil gerçek güncelleme ve çizim akışını birlikte çalıştırır; başlangıçta koridor ortasında hazır top olmadığını da denetler.
+
+## 2026-10-31 — standart üretime dönüş ve 25/53 temposu
+
+- 14/39/44/46/49 yarım üretim sayacı kaldırıldı; 14/39/44/46 standart başlangıç zincirine döndü. Bu beş seviye ve 25/53 standart top ekleme/aralık düzenini kullanır.
+- 25 nihai flowBoost=1, 53=1,2: aynı süre/puan/tempo koşullarında ilerleme hızları önceki sürüme göre %33,3 ve %40 azalır. Hedefler, 26 hızı, renk grupları, yardım ve geometri korunur.
+- 320/390 px ve 60/120 Hz kontrollü testleri geçti: başlangıç, 120 saniyelik standart üretim/aralık karşılaştırması, bütün puan basamakları ve tempo döngüleri, buz/duraklatma/geri çekilme. Değişiklik öncesi çalışma ölçümleriyle diğer 93 seviye eşleşti. Grup/gökkuşağı, dört-top eşleşmesi ve ödül/kayıt regresyonları geçti. Gerçek telefonda insan oynanış testi yapılmadı.
