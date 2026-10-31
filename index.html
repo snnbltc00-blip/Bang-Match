@@ -500,9 +500,10 @@ for(const [lv,knot] of Object.entries(KNOT_LEVELS)){
 const LEVEL_GOALS={"2":300,"6":300,"8":200,"10":270,"12":170,"14":200,"15":200,"16":250,"17":350,"18":200,"19":200,"20":300,"22":250,"25":300,"26":300,"27":350,"29":250,"30":200,"31":200,"33":200,"34":350,"35":250,"36":250,"37":350,"39":300,"40":300,"41":300,"42":300,"43":250,"44":300,"45":250,"46":250,"47":400,"48":400,"49":200,"50":200,"51":300,"52":200,"53":250};
 for(const [number,goal] of Object.entries(LEVEL_GOALS))LVC[Number(number)-1].goal=goal;
 for(const number of [16,34])LVC[number-1].flowBoost=(LVC[number-1].flowBoost||1)*.5;
+const FAST_FLOW_LEVELS=new Set([54,55,66,73,75,79,88,90,96,97]);
 for(let number=25;number<=100;number++){
  const cfg=LVC[number-1];
- if((cfg.sources||cfg.n)===1)cfg.flowBoost=(cfg.flowBoost||1)*(number>=50?2:1.5);
+ if((cfg.sources||cfg.n)===1)cfg.flowBoost=(cfg.flowBoost||1)*(FAST_FLOW_LEVELS.has(number)?2:1.5);
 }
 
 LVC[25].flowBoost=(LVC[25].flowBoost||1)*.3;
