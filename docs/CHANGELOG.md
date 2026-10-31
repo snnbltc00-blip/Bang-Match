@@ -81,3 +81,7 @@ Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Ma
 - 14/39/44/46/49 yarım üretim sayacı kaldırıldı; 14/39/44/46 standart başlangıç zincirine döndü. Bu beş seviye ve 25/53 standart top ekleme/aralık düzenini kullanır.
 - 25 nihai flowBoost=1, 53=1,2: aynı süre/puan/tempo koşullarında ilerleme hızları önceki sürüme göre %33,3 ve %40 azalır. Hedefler, 26 hızı, renk grupları, yardım ve geometri korunur.
 - 320/390 px ve 60/120 Hz kontrollü testleri geçti: başlangıç, 120 saniyelik standart üretim/aralık karşılaştırması, bütün puan basamakları ve tempo döngüleri, buz/duraklatma/geri çekilme. Değişiklik öncesi çalışma ölçümleriyle diğer 93 seviye eşleşti. Grup/gökkuşağı, dört-top eşleşmesi ve ödül/kayıt regresyonları geçti. Gerçek telefonda insan oynanış testi yapılmadı.
+
+## 2026-10-31 — 39/44 grup ve hız düzenlemesi
+
+39/44 başlangıç ve sürekli üretiminde 4–6 grup oranı %75 (4:%25, 5:%30, 6:%20); 7 oranı %2,5 korunur. Nihai flowBoost ×0,8 ile toplam ilerleme hızı %20 azaltıldı. Bekleyen hedefler de dahil: 14→200, 46→250, 49→200. Grup testi: sürekli 10.000, başlangıç 2.000 örnek; gökkuşağı, standart üretim ve tempo/hız kontrolleri geçti. Gerçek telefon oynanış testi yapılmadı.
