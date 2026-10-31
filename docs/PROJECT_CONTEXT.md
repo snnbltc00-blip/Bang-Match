@@ -28,7 +28,7 @@ Akış `requestAnimationFrame(loop) → upd(dt) → draw()`. `rs()` CSS boyutu v
 |---|---|
 | Seviye verisi | `LVC`, `LEVEL_NAMES`, `LEVEL_GOALS`, `MULTI_SOURCE_LEVELS`, `BRAID_LEVELS`, `KNOT_LEVELS` |
 | Geometri/kesişim | `newSpiral`, `specialPaths`, `makeObjectPath`, `makeMultiSourcePaths`, `makeBraidedPaths`, `preparePaths`, `buildCrossingMasks`, `clipUnderpasses` |
-| Top üretimi | `ENHANCED_LEVELS`, `BALANCED_LEVELS`, `nextC`, `CFG.spawnRate`, koridorun `spawnCredit` alanı; dağılımlar GAME_DESIGN.md içinde. |
+| Top üretimi | `ENHANCED_LEVELS`, `BALANCED_LEVELS`, `nextC`, `updOne`, `SP`, `ENTRY_SPAWN_LEVELS`; dağılımlar GAME_DESIGN.md içinde. |
 | Zincir/eşleşme | `updSp`, `updOne`, `spDown`, `spMove`, `spUp`, `grp`, `chk`, `popRange` |
 | Kombo ve puan | `streakHit`, `startRev`, `msgPos`, `burstText`, `draw` |
 | Özel toplar | `BOOSTER_INFO`, `awardLevelBooster`, `grantStarterBoosters`, `showNextBoosterInfo`, `drawBoosterInfo`, `drawLessons`, `drawVolcanoPrompt` |
