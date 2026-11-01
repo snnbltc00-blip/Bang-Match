@@ -1,6 +1,6 @@
 # Bang Match
 
-Renkli top zincirlerini atomlara ulaşmadan eşleştirip patlattığın, 100 seviyeli tek modlu tarayıcı oyunu. Fare veya dokunmatik sürükleme, özel toplar, kombolar ve yerel ilerleme kaydı içerir.
+Renkli top zincirlerini atomlara ulaşmadan eşleştirip patlattığın, 100 seviyeli tek modlu tarayıcı oyunu. Fare veya dokunmatik sürükleme, özel toplar, kombolar ve yerel ilerleme kaydı içerir. Türkçe/İngilizce dil seçimi, animasyonlu ayarlar menüsü ve kalıcı sıralı seviye erişimi vardır. Yeni oyuncuda yalnız 1. seviye açıktır; tamamlanan seviyeler tekrar oynanabilir.
 
 ## Çalıştırma
 
@@ -22,6 +22,6 @@ Ayrı klasik İstop bu oyunun modu değildir. Tarihsel kaynaklar güncel özelli
 
 ## Geliştirme testleri
 
-Node.js ve npm kurulu olmalı. İlk kurulum: `npm install`, ardından `npx playwright install chromium`. Temel kontroller: `npm test`. Geometri/tema: `npm run test:backdrop`; yerleşim: `npm run test:layout`. İsteğe bağlı kurulu tarayıcı için BROWSER_CHANNEL ortam değişkeni kullanılabilir (ör. msedge). Testler PNG çıktıları oluşturabilir; bunlar Git'e eklenmez.
+Node.js ve npm kurulu olmalı. İlk kurulum: `npm install`, ardından `npx playwright install chromium`. Temel kontroller: `npm test`. Seviye hız/grup/yardım dengesi: `npm run test:balance`. Geometri/tema: `npm run test:backdrop`; yerleşim: `npm run test:layout`. İsteğe bağlı kurulu tarayıcı için BROWSER_CHANNEL ortam değişkeni kullanılabilir (ör. msedge). Testler PNG çıktıları oluşturabilir; bunlar Git'e eklenmez.
 
 Bu depoda tarihsel İstop kaynakları, geçiş betikleri ve yerel teslim araçları bulunmaz.

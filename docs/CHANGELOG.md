@@ -99,3 +99,5 @@ Genel tek-kaynak çarpanı 2’den 1,5’e indirildi. Sabit istisna listesi: 54,
 - Bekleyen 54–100 hedefleri, 70/80/90/95 yarım ilerleme hızı, grup/yardım düzenlemeleri, 90=450 ve 95=530 hedefleri, seçili 13 seviyenin grup/gökkuşağı dengesi dahil. Kesin değerlerin sorumlu belgesi GAME_DESIGN.md'dir.
 - Seviye erişimi/öğretici/kayıt, ödül, dil ve menü testleri geçti. Dar açık/koyu görünümler kontrol edildi. Gerçek telefonda test yapılmadı.
 - Kullanıcının açık isteğiyle mevcut GitHub Pages adresine yayın paketi hazırlandı; canlı doğrulama sonucu ayrıca kaydedilir.
+
+Yayın doğrulaması: [83ec743](https://github.com/snnbltc00-blip/Bang-Match/commit/83ec743a0e83f8879492756cc30327ac0e94b436), 15 dosya yerel teslim paketiyle birebir eşleşti. Pages çalışması 41316885193 success; sabit oyun adresindeki index SHA256: `26573b9a8cb9883c77c48f31637b84d72747966dbbf9e0d567b34216455397f2`. Yayın öncesi sekiz güncel test geçti.
