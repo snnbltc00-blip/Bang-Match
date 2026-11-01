@@ -1,9 +1,9 @@
 const {chromium}=require('playwright');
 const assert=require('assert/strict'),path=require('path'),os=require('os'),{pathToFileURL}=require('url');
-(async()=>{const browser=await chromium.launch({headless:true,...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{})});try{
+(async()=>{const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL||undefined});try{
  const page=await browser.newPage({viewport:{width:360,height:640}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(()=>requestAnimationFrame=()=>0);await page.goto(pathToFileURL(path.join(__dirname,'index.html')).href);
  const result=await page.evaluate(()=>{
-  S.snd=0;S.starterBoostersGranted=true;S.boosterSeen={volcano:true,ice:true,electric:true};S.learn.drag=true;
+  S.snd=0;S.progress.colorAccess={highest:100,completed:false};S.starterBoostersGranted=true;S.boosterSeen={volcano:true,ice:true,electric:true};S.learn.drag=true;
   window.prepareRewardTest=(lv,chain,ice,electric)=>{newSpiral(lv);activeBoosterInfo=null;S.winChain={count:chain,lastLevel:lv-1};S.iceProgress=ice;S.electricProgress=electric;S.boosters={volcano:0,ice:0,electric:0};pc=CFG.goal;levelUp();};
   const cases=[];
   for(const [name,chain,ice,electric,expected] of [['volcano',2,0,0,['volcano']],['ice',0,4,0,['ice']],['electric',0,0,9,['electric']],['multiple',2,4,9,['volcano','ice','electric']]]){
@@ -19,7 +19,7 @@ const assert=require('assert/strict'),path=require('path'),os=require('os'),{pat
  assert.equal(result.progress.level,10);assert.equal(result.inventory.volcano,1);
  // Reload after award: inventory stays granted once; saved progress already points forward.
  await page.reload();assert.deepEqual(await page.evaluate(()=>S.boosters),result.inventory);assert.equal(await page.evaluate(()=>S.progress.color.level),10);
- await page.evaluate(()=>{S.snd=0;S.boosterSeen={volcano:true,ice:true,electric:true};S.winChain={count:2,lastLevel:8};newSpiral(9);S.winChain={count:2,lastLevel:8};S.iceProgress=4;S.electricProgress=9;activeBoosterInfo=null;levelUp();upd(2.9);upd(.4)});
+ await page.evaluate(()=>{S.snd=0;S.boosterSeen={volcano:true,ice:true,electric:true};S.winChain={count:2,lastLevel:8};newSpiral(9);S.winChain={count:2,lastLevel:8};S.iceProgress=4;S.electricProgress=9;activeBoosterInfo=null;pc=CFG.goal;levelUp();upd(2.9);upd(.4)});
  await page.evaluate(()=>addEventListener("resize",()=>draw()));
  const shots=[];
  for(const [width,height,dark] of [[360,640,false],[360,640,true],[320,568,false],[640,360,true]]){

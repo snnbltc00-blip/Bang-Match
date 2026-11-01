@@ -31,10 +31,6 @@ Bu yayınların her birinde yerel/uzak index ve canlı Pages SHA256 eşleşmesi,
 
 Ayrıştırma, 100 seviyeye genişletme ve denge çalışmalarının izleri kaynakta bulunur; kesin sürüm tarihleri bu incelemede doğrulanmadı. Eski İstop bot raporları güncel Bang Match kazanma olasılığı/performans kanıtı değildir.
 
-## 2026-10-27 — kaynak ve belge paketi
-
-Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgili test depoya eklendi. Depo yolları uyarlandı, Playwright bağımlılığı sabitlendi. Tarihsel dosyalar, kişisel teslim adresleri ve ekran görüntüleri dahil edilmedi; geliştirme dosyaları Pages yapılandırmasında hariç tutuldu. Önceki yerel/yayın notları tarihsel kayıt olarak korunur.
-
 ## 2026-10-30 — seviye dengesi ve hedefler
 
 - 14, 25, 32, 33, 36, 37, 39, 40, 42, 44, 45, 46, 49, 50 ve 53. seviyelerde başlangıç/sürekli üretimde 4–7 topluk grup olasılığı %75; kalan gruplar 2–3 top. Koridor yardım aralıkları %60/%80/%90 ilerlemede 22/14/8 saniye; eşleşebilir gruplar ve gökkuşağı aralık/sayı sınırları korunur.
@@ -42,11 +38,14 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - Kontroller: 100 seviye yapılandırma karşılaştırması, 17 hedef, üç koridorda hız oranları ve grup/gökkuşağı testi geçti. Eşleşme testi rastgele bir çalışmada hata verdi, sabit tohumla geçti; gerçek telefon oynanış testi yapılmadı.
 - Yayın hedefi mevcut main/index.html; depo adı ve Pages adresi değiştirilmez. Bu kayıt yayın paketini tanımlar; canlı dağıtım sonucu ayrıca doğrulanır.
 
-## 2026-10-30 — grup dağılımının yeniden dengelenmesi
+GitHub kaynak commit'i: [80b734f](https://github.com/snnbltc00-blip/Bang-Match/commit/80b734fd77e1a0d851f40d47b0b9c75e25be4f65). Kapsam: index.html, docs/GAME_DESIGN.md, docs/CHANGELOG.md. Depodaki belge bağlantıları kökteki index.html düzenine uyarlandı.
 
-- Aynı 15 seviyede 4–7 topluk grup olasılığı %55, 2–3 topluk grup olasılığı %45 oldu. 4/5/6/7 topluk gruplar sırasıyla %25/%20/%7,5/%2,5; doğrudan 8 top üretilmez. Oyun içi birleşmeler daha uzun gruplar oluşturabilir.
-- %60/%80/%90 ilerlemede 22/14/8 saniyelik yardım, gökkuşağı sınırları ve eşleşebilir grup koruması değişmedi. Hedefler ve hızlar korunur.
-- Sabit tohumlu testte koridor başına 10.000 grup incelendi: uzun gruplar %53,80–55,79; 7 topluk gruplar %2,18–2,77. Yardım eşikleri, dört topluk gruplar, çoklu koridor ve 100 seviyede çizim kontrolleri geçti. Test depo yollarına uyarlandı.
+
+Yayın doğrulaması: 80b734f için Pages çalışması 41110677809 success. Sabit oyun adresinin HTTP içeriği yerel index.html ile SHA256 eşleşti: 174eae0480521a98a769456acb825f21be47db1c8ef4f5022b497b5420a95584. Canlı sayfada 17 hedef, 26. seviyenin üç koridoru, flowBoost=0,3 ve çizilen 🎯 0/300 göstergesi doğrulandı.
+
+## 2026-10-30 — grup dağılımı yeniden dengelendi
+
+Aynı 15 seviyede uzun grup olasılığı %55, kısa grup olasılığı %45; 7 top %2,5 ve doğrudan 8 top üretimi yok. Kesin dağılım GAME_DESIGN.md içinde. Gökkuşağı eşikleri, hızlar ve hedefler korundu. Sabit tohumlu dağılım/yardım/çoklu koridor testi geçti. GitHub commit: d3fc4f76c29c362acbebfe16987e04c7b7c9b874; index.html, GAME_DESIGN.md, CHANGELOG.md ve depo yollarına uyarlanmış verify-bang-selected-balance.cjs gönderildi.
 
 ## 2026-10-30 — hedefler, seyrek çıkış ve üç seviyede yardım
 
@@ -55,12 +54,11 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - 14/25/37 için 2–3/4/5/6/7 topluk grup oranları %10/%20/%30/%25/%15. Yardım aralıkları %0–60/%60–80/%80–90/%90–100 için 22/16/10/6 saniye; temel skor tetikleyicisi ve gökkuşağı korumaları sürer.
 - Sürekli üretimde koridor başına 10.000, başlangıç üretiminde 2.000 örnek oran testleri geçti. Başlangıç grubunun kuyrukta kalan kısmı sayıldı; kısa yollarda tamamı ilk karede görünmeyebilir. Yardım/grup koruması, üretim/hareket regresyonu ve sabit tohumlu eşleşme testleri geçti. İnsan oynanış testi yapılmadı.
 
-## 2026-10-30 — özel top kazanma bildirimi ve son paket
+GitHub kaynak commit'i: f5759718401555733f48380ef4b34d577234472e.
 
-- Gerçek envanter artışında, bitiş animasyonundan sonra mevcut top görseli ve adıyla kazanma kutucuğu gösterilir. Çoklu ödüller sırayla gösterilir; son Devam Et sonraki seviyeyi açar. Bildirim yeni ödül vermez; kayıt ve kazanım sistemi korunur.
-- Kısa büyüme, hafif parlama, karartma ve seri tıklama koruması eklendi. Ödülsüz/kayıp akışı değişmez. Yenilemede ödül ve sonraki seviye kaydı korunur, kutucuk tekrar oynatılmaz.
-- Ödül bildirimi, özel toplar/kayıt, grup/gökkuşağı dağılımı ve üretim/hareket regresyon testleri son paket üzerinde geçti. Dar ekran ve açık/koyu görselleri kontrol edildi.
-- Önceki hedefler, 26 hız çarpanı 0,3, beş seviyenin yarım çıkış sıklığı ve 14/25/37 dağılım/yardımı korunur. 1. seviye hız kontrolü isteği iptal edildi; hiçbir hız kontrolü eklenmedi.
+## 2026-10-30 — özel top kazanma bildirimi
+
+Başarılı seviye sonunda gerçek envanter artışından üretilen ödül kutucuğu eklendi. Kutucuklar bitiş animasyonundan sonra sırayla gösterilir; son Devam Et sonraki seviyeyi açar. Mevcut ödül sistemi ve kayıtlar korunur. Yeni ödül-geçiş testi ve mevcut özel top testi geçti; dar açık/koyu ve yatay görünüm kontrol edildi. Son paket GitHub’a gönderildi. 1. seviye hız kontrolü iptal edildi ve eklenmedi.
 
 ## 2026-10-30 — yeni topların çıkış konumu
 
@@ -68,13 +66,15 @@ Güncel özel-top düzeltmesi, Markdown belgeleri, shell kaynağı ve altı ilgi
 - Hata, girişten uzaklaşmış kuyruk için d=sonTop.d-SP kullanılmasıydı. İlk top 80–133 yol birimi ileride oluşabiliyordu; doğum konumu üretim sayacından ayrıldı.
 - Mobil 320/390 px testinde 12 seviyenin tüm koridorlarında giriş konumu doğrulandı. Diğer 88 seviyede önceki davranışla eşlik, yarım üretim oranları, grup/gökkuşağı ve ödül kutucuğu regresyonları geçti.
 
+GitHub kaynak commit'i: f6b12ebadfb821d8366c7a030875a8d0437ea778.
+
 ## 2026-10-30 — dört seviyenin başlangıç yerleşimi düzeltmesi
 
 14/39/44/46 seviyelerinde koridor başlangıçta ilerisine kadar dolduruluyordu; önceki doğum-konumu düzeltmesi bu hazır dizilimi kapsamıyordu. Artık ilk top girişte görünür, kalan başlangıç renkleri mevcut sq kuyruğundan normal aralıklarla çıkar. Ayrı üretim sistemi eklenmedi; renk sırası, grup dağılımı, geometri, hareket formülü ve spawnRate=0,5 korunur. Bu dört seviyenin ilk karede görünür top sayısı koridor başına birdir.
 
 320/390 px üzerinde 12 saniyelik gerçek upd+draw akışı, başlangıç renk kuyruğu eşliği ve her doğumun d=0 olması doğrulandı. İlk kare görselleri açık/koyu temada incelendi. Giriş-konumu, üretim/hareket ve grup/gökkuşağı regresyonları geçti.
 
-Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Match/commit/4909576467bc644f6fe24d0e6653d99f8b43a359). Mobil test, yalnız üretim fonksiyonunu değil gerçek güncelleme ve çizim akışını birlikte çalıştırır; başlangıçta koridor ortasında hazır top olmadığını da denetler.
+GitHub kaynak commit'i: 4909576467bc644f6fe24d0e6653d99f8b43a359.
 
 ## 2026-10-31 — standart üretime dönüş ve 25/53 temposu
 
@@ -86,6 +86,16 @@ Kaynak düzeltme commit’i: [4909576](https://github.com/snnbltc00-blip/Bang-Ma
 
 39/44 başlangıç ve sürekli üretiminde 4–6 grup oranı %75 (4:%25, 5:%30, 6:%20); 7 oranı %2,5 korunur. Nihai flowBoost ×0,8 ile toplam ilerleme hızı %20 azaltıldı. Bekleyen hedefler de dahil: 14→200, 46→250, 49→200. Grup testi: sürekli 10.000, başlangıç 2.000 örnek; gökkuşağı, standart üretim ve tempo/hız kontrolleri geçti. Gerçek telefon oynanış testi yapılmadı.
 
+
 ## 2026-10-31 — 50–100 genel hız dengesi
 
 Genel tek-kaynak çarpanı 2’den 1,5’e indirildi. Sabit istisna listesi: 54,55,66,73,75,79,88,90,96,97. Çoklu koridor koşulu değişmediğinden 90 dahil 60/70/80/90/95/100 özel hızları korunur. 25/26/53 nihai ayarları aynı; 35 seviyenin ilerlemesi %25 azaldı, diğer 65 seviye aynı kaldı. 100 seviye yapılandırma/başlangıç ve koridor başına 36 süre/puan hız örneği, standart üretim, grup/gökkuşağı testleri geçti. Gerçek telefon oynanış testi yapılmadı.
+
+
+## 2026-11-01 — dil, ayarlar, kalıcı erişim ve bekleyen denge güncellemeleri
+
+- Türkçe/İngilizce merkezi çeviriler, kalıcı dil tercihi ve sola açılan ayarlar menüsü. Ses/tema korundu; İngilizce slogan: Match and BANG!
+- Kalıcı sıralı seviye erişimi; eski kayıt geçişi, tekrar oynama sırasında erişimin korunması ve başlatma kontrolleri. Kilitli kartlarda iki dilde ad ve hedef, sağ üstte kilit görünür.
+- Bekleyen 54–100 hedefleri, 70/80/90/95 yarım ilerleme hızı, grup/yardım düzenlemeleri, 90=450 ve 95=530 hedefleri, seçili 13 seviyenin grup/gökkuşağı dengesi dahil. Kesin değerlerin sorumlu belgesi GAME_DESIGN.md'dir.
+- Seviye erişimi/öğretici/kayıt, ödül, dil ve menü testleri geçti. Dar açık/koyu görünümler kontrol edildi. Gerçek telefonda test yapılmadı.
+- Kullanıcının açık isteğiyle mevcut GitHub Pages adresine yayın paketi hazırlandı; canlı doğrulama sonucu ayrıca kaydedilir.

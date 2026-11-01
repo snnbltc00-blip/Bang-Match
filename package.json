@@ -4,9 +4,10 @@
   "private": true,
   "description": "Bang Match Oyun Projesi",
   "scripts": {
-    "test": "node verify-bang-boosters.cjs && node verify-bang-four-collision.cjs && node verify-bang-menu-focus.cjs",
+    "test": "node verify-bang-unlocks.cjs && node verify-bang-language.cjs && node verify-bang-ui.cjs && node verify-bang-reward-notice.cjs && node verify-bang-menu-focus.cjs",
     "test:backdrop": "node verify-bang-saved-backdrop.cjs",
-    "test:layout": "node verify-bang-combo-placement.cjs"
+    "test:layout": "node verify-bang-combo-placement.cjs",
+    "test:balance": "node verify-bang-late-flow.cjs --knots && node verify-bang-thirteen-groups.cjs && node verify-bang-selected-balance.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

@@ -42,13 +42,23 @@ Başarılı seviye sonunda envanteri gerçekten artan özel toplar için, 2,8 sa
 - Halat düzenleri: 7, 16, 22, 26, 34, 38, 43, 47, 60, 70, 80, 90, 95, 100. Alt yol kesişim maskesiyle çizilir.
 - 5 ve 9 eski Y dallanması olarak belgelenmez; mevcut yapı tek kaynaklıdır.
 - Hız süre, ilerleme, tempo ve seviye çarpanlarıyla değişir. Patlatılan her 25 top hız formülüne %5'lik basamak ekler; bu tek başına toplam hız değildir.
-- 16 ve 34 için flowBoost ×0,5; 25–49 tek kaynaklılar için ×1,5; 50–100 tek kaynaklılar için ×1,5 uygulanır; sabit FAST_FLOW_LEVELS listesi [54,55,66,73,75,79,88,90,96,97] için genel çarpan ×2 olarak tutulur. Mevcut tek-kaynak koşulu korunur: 90 çoklu koridorlu olduğundan bu genel çarpanı almaz; 60/70/80/90/95/100 özel hızları değişmez. Sonradan uygulanan 25=1, 26=0,3 ve 53=1,2 nihai flowBoost ayarları korunur. Böylece 35 seviyenin toplam hızı aynı süre/puan/tempo koşullarında %25 azalır. Bu işlemlerden sonra 26. seviyenin flowBoost değerine ×0,3 uygulanır; üç koridorda da önceki ×0,4 ayarına göre hız çarpanı %25 azalır. Hedef hız formülüne de girdiğinden eski hedefle aynı patlatma sayısındaki hız oranı değişebilir.
+- 16 ve 34 için flowBoost ×0,5; 25–49 tek kaynaklılar için ×1,5; 50–100 tek kaynaklılar için ×1,5 uygulanır; sabit FAST_FLOW_LEVELS listesi [54,55,66,73,75,79,88,90,96,97] için genel çarpan ×2 olarak tutulur. Mevcut tek-kaynak koşulu korunur: 90 çoklu koridorlu olduğundan bu genel çarpanı almaz; Bu genel değişiklik 60/70/80/90/95/100 hızlarına uygulanmaz. 70/80/90/95 için aşağıdaki son yavaşlatma ayrıca geçerlidir. Sonradan uygulanan 25=1, 26=0,3 ve 53=1,2 nihai flowBoost ayarları korunur. Böylece 35 seviyenin toplam hızı aynı süre/puan/tempo koşullarında %25 azalır. Bu işlemlerden sonra 26. seviyenin flowBoost değerine ×0,3 uygulanır; üç koridorda da önceki ×0,4 ayarına göre hız çarpanı %25 azalır. Hedef hız formülüne de girdiğinden eski hedefle aynı patlatma sayısındaki hız oranı değişebilir.
 - 2026-10-30 hedef güncellemesi: 2→300, 19→200, 22→250, 26→300, 27→350, 29→250, 30→200, 31→200, 35→250, 36→250, 39→300, 40→300, 41→300, 42→300, 43→250, 44→300, 45→250, 46→350, 49→300, 50→200, 51→300, 52→200, 53→250. Nihai değerler LEVEL_GOALS üzerinden uygulanır. 2026-10-31: 14. seviyenin hedefi 380’den 200 topa, 46. seviyenin hedefi 350’den 250 topa, 49. seviyenin hedefi 300’den 200 topa indirildi.
 - Seviye kartları küçük kareler, genişliğe göre 4–7 sütun, kaydırma ve devam et içerir. Zor kartlar ayrı renk değildir; x2/x3 etiketi yoktur.
 
 ## Arayüz
 
-Atom temalı giriş yaklaşık dört saniye sürer, dokunarak atlanır. Menüde rekor, BANG MATCH, Eşleştir ve patlat!, Oyuna Başla ve daha küçük Seviyeler düğmesi; sağ üstte ay/nota kontrolleri bulunur. Arka plan son kayıtlı seviyenin bağımsız bulanık animasyonudur.
+### Kalıcı seviye erişimi
+
+Yeni kayıtta yalnız 1. seviye açıktır. Gerçek hedef tamamlandığında yalnız sonraki seviye açılır; yeniden oynama, kayıp ve menüye dönüş en yüksek erişimi geriletmez. Kartlarda tamamlanmış seviyeler yeşil onay, en yüksek açık seviye mevcut aktif vurgu, kilitliler soluk görünüm ve sağ üstte küçük kilit simgesi taşır. Kilitli kartlarda da Türkçe/İngilizce adlar ve hedefler görünür; uzun adlar iki satır ve genişlik sınırıyla kart içine sığdırılır. Kilitli karta dokunmak etkisizdir; seviye başlatma girişinde de erişim denetlenir. Kart boyutları ve kaydırma korunur.
+
+Oyuna Başla ve Devam Et, en yüksek açık ve henüz tamamlanmamış seviyeyi açar. Son oynanan bölüm ayrı saklanır. 100 tamamlanınca bütün seviyeler açık kalır; ana menüden başlatma önceki davranış gibi 1'e döner. İlk sürükleme öğreticisi, üç özel top tanıtımı ve başlangıç hediyesi mevcut kayıt bayraklarını kullanır, tamamlanan öğretici ve hediye yeniden verilmez. Kayıt alanı ve eski kayıt sınırları [PROJECT_CONTEXT](PROJECT_CONTEXT.md#kayıt-sözleşmesi) içindedir.
+
+Atom temalı giriş yaklaşık dört saniye sürer, dokunarak atlanır. Menüde rekor, BANG MATCH, Eşleştir ve patlat!, Oyuna Başla ve daha küçük Seviyeler düğmesi bulunur. Arka plan son kayıtlı seviyenin bağımsız bulanık animasyonudur.
+
+Sağ üstte varsayılan olarak yalnız ayarlar dişlisi görünür. Açıldığında soldan sağa dil, sessiz mod, karanlık mod ve dişli sıralanır. 44 px seçenekler boyut değiştirmeden dişliden sola kayar; 30 ms aralıklı gecikmelerle toplam 300 ms'de açılır, kapanırken ters sırayla sağa döner. Hızlı tekrar basış mevcut animasyon konumundan devam eder. Kapalı ve hareket halindeki seçenekler tıklanamaz; dişli her zaman kullanılabilir. Seçeneklere dokunmak menüyü kapatmaz; yalnız dişli açıp kapatır. Azaltılmış hareket tercihinde geçiş anlıktır. Ses/tema simgeleri, renkleri ve kayıtları korunur.
+
+İngilizce ana menü sloganı “Match and BANG!” olarak kullanılır. Türkçe varsayılandır; dil düğmesi geçilecek dili gösterir (Türkçede ENG, İngilizcede TR). Dil değişimi sonraki çizimde giriş, menüler, 100 seviye adı, hedef/HUD, öğreticiler, kombo, duraklatma, başarı/kayıp ve özel top açıklama/ödül metinlerine yansır. Dil tercihi ayrı `bang_match_lang` anahtarında saklanır; ilerleme ve envanter değişmez. Teknik çeviri ekleme yöntemi [PROJECT_CONTEXT](PROJECT_CONTEXT.md#dil-ve-ayarlar-yapısı) içinde açıklanır.
 
 Duraklatma kutusu Küçük bir mola... başlığını, devam/menü ve ses/tema kontrollerini içerir. Seviye ekranı tema ile uyumludur. Kombo yerleşimi boş merkez, koridor altı, atom üstü/altı ve alt boşlukları arar; sıkışık düzende en az çakışan aday seçilebilir. Her geometride sıfır örtüşme garanti değildir.
 
@@ -77,3 +87,23 @@ assistRainbow yardım beklemesi %0–60 için 22 saniye (mevcut skor eşiğiyle 
 ### 39 ve 44 grup/hız dengesi (2026-10-31)
 
 Başlangıç ve sürekli üretimde 2/3/4/5/6/7 topluk grup oranları %11,25/%11,25/%25/%30/%20/%2,5. 4–6 toplamı %52,5’ten %75’e çıkarıldı; 7 oranı artırılmadı. Nihai flowBoost 1,5×0,8=1,2: aynı süre/puan/tempo koşullarında ilerleme hızı %20 azalır. Standart üretim, gökkuşağı yardımı ve yollar korunur.
+
+### 2026-11-01 — seçili 36 seviye hedefi
+
+54–100 aralığındaki istenen 36 hedef mevcut LEVEL_GOALS üzerinden güncellendi; diğer 64 hedef korundu. Nihai LVC, HUD ve kazanma eşikleri kontrol edildi. Hız ayarları ve hesaplama formülü değişmedi; hedef mevcut hız/ilerleme formülünün girdisi olduğundan aynı patlatma sayısındaki ilerleme oranı yeni hedefe göre hesaplanır. Bu hedefler güncel yayın paketine dahildir.
+
+### 2026-11-01 — dört düğüm seviyesinde yarım hız
+
+70/80/90/95 için diğer ayarlardan sonra flowBoost ×0,5 uygulanır (nihai değer 0,5). Üç koridorun her birinde aynı süre/puan/tempo koşullarında atoma ilerleme hızı yarıya iner. Ayar yalnız ilk yapılandırmada uygulanır; yeniden başlatmalarda birikmez. FAST_FLOW_LEVELS değişmez; 90 da yavaşlatılır. Hedefler sırasıyla 500/500/450/530; yollar, koridor sayıları, renk/yardım, fizik ve üretim kodu korunur. Üretimin harekete bağlı mevcut zamanlaması sürer. Regresyon: verify-bang-late-flow.cjs --knots.
+
+### 2026-11-01 — dört düğüm seviyesinde uzun gruplar ve yardım
+
+Yalnız 70/80/90/95, mevcut ENHANCED/BALANCED üretimine dahil edilir: 70/80 başlangıç ve sürekli üretiminde 2/3/4/5/6/7 top oranları %5/%5/%20/%30/%25/%15; grupların %70’i 5–7 toptur. 90/95 için oranlar %15/%15/%30/%20/%15/%5 olarak ayarlanmıştır; 5–7 toplamı %40’tır. Gökkuşağı girişte grup sırasını kesmek yerine assistRainbow ile yerleştirilir; eski kurtarma dalı ayrıca çalışmaz. Yol %45’ten sonra zamanlı yardım alır (öncesinde mevcut skor eşiği); %45–60/%60–80/%80–90/%90–100 aralıklarında 18/12/9/6 saniye bekleme vardır. Koridor başına en fazla üç gökkuşağı, en az dört top aralığı mesafe; seçili toplar ve dört topluk gruplar korunur, uzun grupların yalnız uçları kullanılır. Uygun aday yoksa yardım ertelenir. Yarım hız, hedefler ve yollar korunur.
+
+### 2026-11-01 — seçili 13 seviyede gruplar ve skor gökkuşağı
+
+55/57/59/60/61/64/65/68/74/75/78/79/94 için ayrı groupRainbowBoost=1,2 ayarı kullanılır. nextC başlangıç ve sürekli üretimde 2/3/4/5/6/7 normal topu sırasıyla %15/%15/%20/%25/%15/%10 olasılıkla seçer; ardışık gruplar farklı renktir. Gökkuşağı kuyruktaki grubun ortasına girmez, yeni grup sınırını bekler.
+
+Nihai wild aralığı round(eski wild/1,2): 85→71 veya 55→46. İlk nextRb ve sonraki skor eşikleri bu aralığı kullanır. Kontrollü 20.000 patlatma sayacı testinde skorla üretim %19,6 arttı. Gerçek oynanışta uygun grup sınırı ve birikim koruması üretimi geciktirebilir; bu oran değişmeden kalan atom kurtarma yardımı dahil toplam için garanti değildir. Girişten skor gökkuşağı, koridorda zaten en az iki gökkuşağı varsa veya girişin dört SP yakınında gökkuşağı varsa ertelenir. Yeni normal grup tüketilmeden ikinci skor gökkuşağı gelmez. Çoklu koridorda daha az skor gökkuşağı almış koridor önceliklidir; sayaçlar yeni koridorla sıfırlanır, kayda eklenmez. Mevcut atom kurtarma dalı ve assistRainbow diğer seviyelerde aynı kalır.
+
+Hedefler, hareket/üretim formülü, yollar ve özel hızlar değişmedi. verify-bang-thirteen-groups.cjs: koridor başına 10.000 sürekli grup, 2.000 başlangıç örneği, 120 saniye üretim/aralık, kurtarma ve diğer 87 seviye eşliği. Yerel güncelleme; GitHub yayını yapılmadı.
