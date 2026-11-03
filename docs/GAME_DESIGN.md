@@ -54,7 +54,7 @@ Yeni kayıtta yalnız 1. seviye açıktır. Gerçek hedef tamamlandığında yal
 
 Oyuna Başla ve Devam Et, en yüksek açık ve henüz tamamlanmamış seviyeyi açar. Son oynanan bölüm ayrı saklanır. 100 tamamlanınca bütün seviyeler açık kalır; ana menüden başlatma önceki davranış gibi 1'e döner. İlk sürükleme öğreticisi, üç özel top tanıtımı ve başlangıç hediyesi mevcut kayıt bayraklarını kullanır, tamamlanan öğretici ve hediye yeniden verilmez. Kayıt alanı ve eski kayıt sınırları [PROJECT_CONTEXT](PROJECT_CONTEXT.md#kayıt-sözleşmesi) içindedir.
 
-Atom temalı giriş yaklaşık dört saniye sürer, dokunarak atlanır. Menüde rekor, BANG MATCH, Eşleştir ve patlat!, Oyuna Başla ve daha küçük Seviyeler düğmesi bulunur. Arka plan son kayıtlı seviyenin bağımsız bulanık animasyonudur.
+Girişte BALTX Studio videosu 3 saniye oynar; dokunarak atlanamaz. Video tamamlanınca ana menü açılır. Yatay video oranı korunur, kalan alan siyah gösterilir. Menüde rekor, BANG MATCH, Eşleştir ve patlat!, Oyuna Başla ve daha küçük Seviyeler düğmesi bulunur. Arka plan son kayıtlı seviyenin bağımsız bulanık animasyonudur.
 
 Sağ üstte varsayılan olarak yalnız ayarlar dişlisi görünür. Açıldığında soldan sağa dil, sessiz mod, karanlık mod ve dişli sıralanır. 44 px seçenekler boyut değiştirmeden dişliden sola kayar; 30 ms aralıklı gecikmelerle toplam 300 ms'de açılır, kapanırken ters sırayla sağa döner. Hızlı tekrar basış mevcut animasyon konumundan devam eder. Kapalı ve hareket halindeki seçenekler tıklanamaz; dişli her zaman kullanılabilir. Seçeneklere dokunmak menüyü kapatmaz; yalnız dişli açıp kapatır. Azaltılmış hareket tercihinde geçiş anlıktır. Ses/tema simgeleri, renkleri ve kayıtları korunur.
 

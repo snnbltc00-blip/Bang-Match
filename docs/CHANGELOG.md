@@ -101,3 +101,10 @@ Genel tek-kaynak çarpanı 2’den 1,5’e indirildi. Sabit istisna listesi: 54,
 - Kullanıcının açık isteğiyle mevcut GitHub Pages adresine yayın paketi hazırlandı; canlı doğrulama sonucu ayrıca kaydedilir.
 
 Yayın doğrulaması: [83ec743](https://github.com/snnbltc00-blip/Bang-Match/commit/83ec743a0e83f8879492756cc30327ac0e94b436), 15 dosya yerel teslim paketiyle birebir eşleşti. Pages çalışması 41316885193 success; sabit oyun adresindeki index SHA256: `26573b9a8cb9883c77c48f31637b84d72747966dbbf9e0d567b34216455397f2`. Yayın öncesi sekiz güncel test geçti.
+
+
+## 2026-11-03 — BALTX Studio giriş videosu
+
+- Atom girişinin yerine HTML içine gömülü 3 saniyelik sessiz MP4 eklendi; dokunarak atlanmaz, bitince mevcut ana menü açılır. Menü, oyun ayarları ve kayıt sözleşmesi korundu.
+- HTML/shell eşliği ve giriş testi güncellendi. Beş temel Chrome testi geçti; gerçek döngüde 320 px açık/koyu giriş ve menü görselleri kontrol edildi. Gerçek telefon testi kullanıcı doğrulaması bekliyor.
+- Kullanıcı yayınlamayı onayladı; canlı yayın doğrulaması ayrıca raporlanır.

@@ -21,6 +21,8 @@
 
 Akış `requestAnimationFrame(loop) → upd(dt) → draw()`. `rs()` CSS boyutu ve cihaz piksel yoğunluğuna göre canvas'ı boyutlandırır. Pointer olayları fare/dokunmayı, wheel ve sürükleme seviye listesini yönetir.
 
+`bangIntroVideo`, HTML içine data URI olarak gömülü, sessiz ve playsinline 3 saniyelik MP4 oynatır. `playBangIntro()` oynatmayı başlatır; `finishBangIntro()` yalnız gerçek `ended` durumunda menüye geçer. Dokunma atlamaz; sekme gizlenince video durur, geri gelince devam eder. Ayrı medya dosyası gerekmez.
+
 `st` temel ekran akışını taşır: `intro → menu → levels/sp → spwin/lose`. `activeBoosterReward` seviye sonu ödül gösteriminde geçişi bekletir; `earnedBoosterKinds` yalnız geçici gösterim kuyruğudur. `paused` duraklatma, `activeBoosterInfo` açıklama sırasında güncellemeyi durdurur. `mode=2` aktif oyundur. HTML'de kalan klasik fonksiyonlar/durum dalları kullanıcıya açık ikinci mod anlamına gelmez; ilgisiz görevde temizleme.
 
 ## Sembol haritası
@@ -81,7 +83,7 @@ Kökte `node DOSYA.cjs` ile ilgili testi çalıştır; önce hedefini ve varsay�
 |---|---|
 | [verify-bang-unlocks.cjs](../verify-bang-unlocks.cjs) | Yeni/eski/bozuk kayıt, kilitli kart ve doğrudan giriş, gerçek sürükleme ve üç tanıtım, tek seferlik hediyeler, tekrar/kayıp/yenileme, 100. seviye ve dar TR/EN açık/koyu kartlar. |
 | [verify-bang-language.cjs](../verify-bang-language.cjs) | Sözlük/menü eşliği, 100 seviye adı, aktif ekran çevirileri, dokunma/seri aç-kapat, görünmez hitbox, dil/tema/ses kaydı ve veri koruması; iki dilde 100 seviyenin aynı rastgele girdilerle eşliği; dar açık/koyu ekranlar. |
-| [verify-bang-ui.cjs](../verify-bang-ui.cjs) | Giriş/menü/geçiş, yeni ayarlar üzerinden tema/ses, kayıt geçişi ve üç ekran boyutu; görseller geçici klasöre yazılır. |
+| [verify-bang-ui.cjs](../verify-bang-ui.cjs) | 3 saniyelik video/atlama engeli/menü geçişi, yeni ayarlar üzerinden tema/ses, kayıt geçişi ve üç ekran boyutu; görseller geçici klasöre yazılır. |
 | [verify-bang-reward-notice.cjs](../verify-bang-reward-notice.cjs) | Gerçek ödül, çoklu kutucuk, çift tıklama, ödülsüz/kayıp/son seviye akışı ve yeniden yükleme; dar ekran ve tema görselleri. |
 | [verify-bang-boosters.cjs](../verify-bang-boosters.cjs) | İlk hediye, modal sırası/durması, ödüller, yeniden yükleme ve kayıt geçişi. |
 | [verify-bang-entry-start.cjs](../verify-bang-entry-start.cjs) | Yedi seviyede standart başlangıç dizilimi, gerçek upd+draw akışında aralıklar; dar açık/koyu görünüm. |
